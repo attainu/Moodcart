@@ -1,0 +1,24 @@
+.positions {
+  position: absolute;
+  right: 40px;
+  word-spacing: 30px;
+  font-size: 25px;
+  color: aliceblue;
+}
+
+.bgColor {
+  background-color: rgb(47, 47, 236);
+}
+
+NavItem {
+  color: aliceblue;
+}
+
+Link {
+  color: white;
+}
+
+.App-logo {
+  height: 06vmin;
+  pointer-events: none;
+}
