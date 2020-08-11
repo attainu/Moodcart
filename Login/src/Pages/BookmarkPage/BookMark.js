@@ -1,7 +1,13 @@
 import React from "react";
+import Navbar from "../../Components/Navbar";
 
 const BookMark = () => {
-  return <div>here will be your saved articles</div>;
+  return (
+    <div>
+      <Navbar />
+      <div>hello thsljflskdjflsjdfl</div>
+    </div>
+  );
 };
 
 export default BookMark;

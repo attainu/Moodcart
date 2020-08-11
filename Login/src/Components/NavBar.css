@@ -12,10 +12,12 @@
 
 NavItem {
   color: aliceblue;
+  text-decoration: azure;
 }
 
 Link {
   color: white;
+  text-decoration: none;
 }
 
 .App-logo {
