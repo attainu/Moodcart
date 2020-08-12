@@ -1,25 +1,24 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import "./App.css";
+import Container from "./Components/Container";
+import { Route, Redirect, Switch } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import ProfilePage from "./Pages/profilePage";
 import BookmarkPage from "./Pages/BookmarkPage/BookMark";
-import "./App.css";
-import "./Pages/LoginPage/SignIn&Up.css";
-import LoginPage from "./Components/LoginComponent/Container";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Switch>
-        <Route exact path="/Login" component={LoginPage} />
+        <Route path="/login" component={Container} />
         <Route
           exact
-          path="/"
+          path="/home"
           render={(routeProps) => <HomePage {...routeProps} />}
         />
         <Route exact path="/profile" component={ProfilePage} />
-        <Route exact path="/bookmar" component={BookmarkPage} />
-        <Redirect to="/" />
+        <Route exact path="/bookmark" component={BookmarkPage} />
+        <Redirect to="/home" />
       </Switch>
     </div>
   );
