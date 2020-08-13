@@ -1,5 +1,5 @@
 import React from "react";
-import SignInSignUp from "./signInSignUp/SignInSignUp";
+import SignInSignUp from "../signInSignUp/SignInSignUp";
 
 const Form = (props) => {
   return (

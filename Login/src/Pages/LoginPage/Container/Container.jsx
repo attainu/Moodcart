@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FormContainer from "./FormContainer";
-import PanelsContainer from "./Panels/PanelsContainer";
+import PanelsContainer from "../Panels/PanelsContainer";
 
 export class Container extends Component {
   constructor(props) {

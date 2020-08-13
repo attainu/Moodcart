@@ -1,5 +1,5 @@
 import React from "react";
-import Content from "../Content";
+import Content from "../Container/Content";
 
 const leftpanel = ({ props }) => {
   console.log(props);

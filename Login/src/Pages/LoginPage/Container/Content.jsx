@@ -6,8 +6,8 @@ class Content extends Component {
       <div className="content">
         <h3>New Here ? </h3>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi tenetur
-          officiis quae veritatis, tempora dolore.
+          Get Trending News First Please Sign Up and Connect With Us. In the Era
+          Of Knowledge You need to Update Everytime.
         </p>
         <button
           onClick={this.props.props.onClick}

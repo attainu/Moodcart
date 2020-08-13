@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Container from "./Components/Container";
+import Container from "./Pages/LoginPage/Container/Container";
 import { Route, Redirect, Switch } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import ProfilePage from "./Pages/profilePage";
