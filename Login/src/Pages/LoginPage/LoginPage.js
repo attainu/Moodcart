@@ -9,31 +9,34 @@ import { Redirect } from "react-router-dom";
 
 const LoginPage = ({ user, setUser }) => {
   const responseGoogle = (response) => {
-    console.log(response);
+    if (response.error) {
+      console.error(response.error);
+    }
+    setUser({ ...response.profileObj, ...response.tokenObj });
   };
 
   const responseFacebook = (response) => {
     console.log(response);
   };
 
-  if (user) return <Redirect to="/" />;
+  if (user) return <Redirect to='/' />;
   return (
     <div>
       <GoogleLogin
         clientId={Keys.Client_id}
         isSignedIn={true}
-        buttonText="Login"
+        buttonText='Login'
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
         cookiePolicy={"single_host_origin"}
       />
       <FacebookLogin
-        appId="303151077603305"
+        appId='303151077603305'
         autoLoad={false}
-        fields="name,email,picture"
+        fields='name,email,picture'
         // onClick={componentClicked}
         callback={responseFacebook}
-        icon="fa-facebook"
+        icon='fa-facebook'
       />
     </div>
   );
