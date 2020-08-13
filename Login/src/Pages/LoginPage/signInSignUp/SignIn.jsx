@@ -55,7 +55,7 @@ const SignIn = ({ user, setUser }) => {
           onFailure={responseGoogle}
           cookiePolicy={"single_host_origin"}
         />
-        ,
+
         {/* <GoogleLogin
           clientId={}
           onSuccess={responseGoogle}
