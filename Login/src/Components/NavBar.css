@@ -6,19 +6,34 @@
   color: aliceblue;
 }
 
+NavBar {
+  margin: 0px !important;
+}
+
 .bgColor {
-  background-color: rgb(47, 47, 236);
+  background-color: #4481eb;
 }
 
 NavItem {
   color: aliceblue;
 }
 
-Link {
+a {
+  color: white;
+}
+
+NavbarBrand {
+  color: white;
+}
+
+#link {
   color: white;
 }
 
 .App-logo {
   height: 06vmin;
   pointer-events: none;
+}
+.App-logo-profile {
+  border-radius: 20px;
 }

@@ -1,4 +1,4 @@
-import { SET_USER, TOGGLE_AUTH_STATE } from "../actionTypes";
+import { SET_USER, TOGGLE_AUTH_STATE, LOGOUT_USER } from "../actionTypes";
 
 const initialState = {
   user: JSON.parse(localStorage.getItem("user")) || null,
@@ -14,6 +14,9 @@ const userReducer = (state = initialState, action) => {
       return { ...state, user: payload };
     case TOGGLE_AUTH_STATE:
       return { ...state, isAuthenticating: !state.isAuthenticating };
+    case LOGOUT_USER:
+      localStorage.removeItem("user");
+      return { ...state, user: null };
     default:
       return state;
   }

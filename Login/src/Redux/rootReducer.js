@@ -4,7 +4,7 @@ import newsReducer from "./Reducers/newsReducer";
 
 const rootReducer = combineReducers({
   userState: userReducer,
-  newsStae: newsReducer,
+  newsState: newsReducer,
 });
 
 export default rootReducer;

@@ -9,7 +9,7 @@ const newsReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case GET_NEWS:
-      return { ...state, mews: payload };
+      return { ...state, news: payload };
     case TOGGLE_NEWS_FETCHING_STATE:
       return { ...state, isNewsFetching: !state.isNewsFetching };
     default:

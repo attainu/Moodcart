@@ -3,64 +3,71 @@ import "./NavBar.css";
 import { GoogleLogout } from "react-google-login";
 import { logOutUser } from "../Redux/actions/userAction";
 import { connect } from "react-redux";
-import logo from "./news-logo.svg";
-import profile from "./profile.svg";
 import bookmark from "./bookmark.svg";
 import { Navbar, Nav, NavItem, NavbarBrand } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
+import Keys from "../config";
+// import ReactTooltip from "react-tooltip";
+import SideBar from "./sideBar";
 
-const SuNavbar = (props) => {
+const SuNavbar = ({ user, logOutUser }) => {
+  let userData;
+  if (user != null) {
+    userData = JSON.parse(window.localStorage.getItem("user"));
+  } else {
+    userData = null;
+  }
+  console.log(userData);
+
   const handleLogoutFailure = (err) => {
     console.error(err);
   };
 
-  const handleLogoutSuccess = (res) => {
-    console.log(res);
+  const handleLogoutSuccess = () => {
+    alert("Logged out successfully");
+    logOutUser();
   };
 
   return (
-    <Navbar className="bgColor" expand="md">
+    <Navbar className='bgColor' expand='md'>
       <NavbarBrand>
-        <img src={logo} className="App-logo" alt="logo" />
-        <Link to="/">StayUpdated</Link>
+        <Link to='/' id='link'>
+          {" "}
+          <h1>StayUpdated</h1>{" "}
+        </Link>
       </NavbarBrand>
-      <Nav className="mr-auto" className="positions">
-        {!props.user ? (
+      {/* <SideBar /> */}
+      <Nav className='mr-auto' className='positions'>
+        {!user ? (
           <NavItem>
-            <NavLink className="ml-3" to="/login">
+            <NavLink className='ml-3' to='/login'>
               Login
             </NavLink>
           </NavItem>
         ) : (
           <>
             <NavItem>
-              <NavLink to="/bookmar/">
-                <img src={bookmark} className="App-logo" alt="logo" />
-              </NavLink>
+              <Link to='/bookmark'>
+                <img src={bookmark} className='App-logo' alt='logo' />
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink to="/profile/">
-                <img src={profile} className="App-logo" alt="logo" />
+              <NavLink to='/profile/' data-tip='Profile'>
+                <img
+                  src={userData.imageUrl}
+                  className='App-logo-profile App-logo'
+                  alt='logo'
+                />
               </NavLink>
             </NavItem>
             <GoogleLogout
-              clientId="589162593335-pf2mupbbrh8j0n8lkcfs8kgigonksdrv.apps.googleusercontent.com
-              "
-              buttonText="Logout"
+              clientId={Keys.Client_id}
+              buttonText='Logout'
               onLogoutSuccess={handleLogoutSuccess}
               onFailure={handleLogoutFailure}
             />
           </>
         )}
-        {/* <NavItem>
-            <NavLink to='/home'>Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to='/profile'>Profile</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to='/Login'>Login</NavLink>
-          </NavItem> */}
       </Nav>
     </Navbar>
   );
