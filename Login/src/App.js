@@ -5,6 +5,7 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import ProfilePage from "./Pages/profilePage";
 import BookmarkPage from "./Pages/BookmarkPage/BookMark";
+import SearchPage from "./Pages/SearchPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         />
         <Route exact path='/profile' component={ProfilePage} />
         <Route exact path='/bookmark' component={BookmarkPage} />
+        <Route exact path='/Search/:searchQuery' component={SearchPage} />
         <Redirect to='/home' />
       </Switch>
     </div>

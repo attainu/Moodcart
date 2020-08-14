@@ -36,8 +36,7 @@ const SuNavbar = ({ user, logOutUser }) => {
           <h1>StayUpdated</h1>{" "}
         </Link>
       </NavbarBrand>
-      {/* <SideBar /> */}
-      <Nav className='mr-auto' className='positions'>
+      <Nav className='mr-auto' className='positions' navbar>
         {!user ? (
           <NavItem>
             <NavLink className='ml-3' to='/login'>
@@ -60,12 +59,14 @@ const SuNavbar = ({ user, logOutUser }) => {
                 />
               </NavLink>
             </NavItem>
-            <GoogleLogout
-              clientId={Keys.Client_id}
-              buttonText='Logout'
-              onLogoutSuccess={handleLogoutSuccess}
-              onFailure={handleLogoutFailure}
-            />
+            <NavItem>
+              <GoogleLogout
+                clientId={Keys.Client_id}
+                buttonText='Logout'
+                onLogoutSuccess={handleLogoutSuccess}
+                onFailure={handleLogoutFailure}
+              />
+            </NavItem>
           </>
         )}
       </Nav>

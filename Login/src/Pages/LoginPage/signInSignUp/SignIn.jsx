@@ -13,6 +13,14 @@ const SignIn = ({ user, setUser }) => {
     }
     setUser({ ...response.profileObj, ...response.tokenObj });
   };
+  const responseSubmit = (response) => {
+    if (response.error) {
+      console.log(response.error);
+    }
+    setUser({ ...response.profileObj, ...response.tokenObj });
+    console.log(user);
+  };
+
   if (user) return <Redirect to='/' />;
   return (
     <form className='sign-in-form'>
@@ -27,7 +35,12 @@ const SignIn = ({ user, setUser }) => {
         <input type='password' placeholder='Password' />
       </div>
 
-      <input type='submit' value='Login' className='btn solid' />
+      <input
+        type='submit'
+        value='Login'
+        className='btn solid'
+        onSuccess={responseSubmit}
+      />
       <p className='social-text'>Or Sign in with social platform</p>
 
       <div className='social-media'>

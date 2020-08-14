@@ -1,12 +1,13 @@
 import React from "react";
 import Flippy, { FrontSide, BackSide } from "react-flippy";
 
-const ListNews = ({ snews, flippy, ...restProps }) => {
+const ListNews = ({ snews, flippy, mode }) => {
   if (snews !== undefined) {
     return (
       <Flippy
         flipOnHover={false}
         flipOnClick={true}
+        mode={mode}
         flipDirection='horizontal'
         ref={(r) => (flippy = r)}
         className='flips'

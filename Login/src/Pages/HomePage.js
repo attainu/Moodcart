@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import { fetchTrendingNews } from "../Redux/actions/newsAction";
 import News from "../Components/news";
 import Navbar from "../Components/Navbar";
+import Search from "../Components/Search";
 import "./home.css";
 
 class HomePage extends Component {
@@ -17,6 +18,7 @@ class HomePage extends Component {
     ) : (
       <>
         <Navbar />
+        <Search />
         <News news={this.props.news} />
       </>
       // <h1>Hello</h1>

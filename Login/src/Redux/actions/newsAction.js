@@ -16,7 +16,7 @@ export const fetchTrendingNews = () => async (dispatch) => {
         },
       }
     );
-    console.log(response.data);
+    // console.log(response.data);
     dispatch({ type: GET_NEWS, payload: response.data });
   } catch (error) {
     console.error("error");
@@ -25,12 +25,12 @@ export const fetchTrendingNews = () => async (dispatch) => {
   }
 };
 
-export const fetchSearchedNews = () => async (dispatch) => {
+export const fetchSearchedNews = (searchQuery) => async (dispatch) => {
   try {
     dispatch({ type: GET_NEWS, payload: null });
     dispatch({ type: TOGGLE_NEWS_FETCHING_STATE });
     const response = await axios(
-      "https://bing-news-search1.p.rapidapi.com/news/search?count=20&textDecorations=true&setLang=en&cc=in&freshness=Day&originalImg=true&textFormat=Raw&safeSearch=Off&q=defence",
+      `https://bing-news-search1.p.rapidapi.com/news/search?count=20&textDecorations=true&setLang=en&cc=in&freshness=Day&originalImg=true&textFormat=Raw&safeSearch=Off&q=${searchQuery}`,
       {
         // the value of last part o the url needs to set
         method: "GET",
@@ -43,8 +43,8 @@ export const fetchSearchedNews = () => async (dispatch) => {
         },
       }
     );
-    console.log(response.data);
-    dispatch({ type: GET_NEWS, payload: response.data });
+    console.log(response.data.value);
+    dispatch({ type: GET_NEWS, payload: response.data.value });
   } catch (error) {
     console.error("error");
   } finally {
