@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { fetchTrendingNews } from "../Redux/actions/newsAction";
-import News from "../Components/news";
+import { News } from "../Components/news";
 import Navbar from "../Components/Navbar";
 import Search from "../Components/Search";
 import "./home.css";

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchSearchedNews } from "../Redux/actions/newsAction";
-import News from "../Components/news";
+import SearchedNews from "../Components/searchedNews";
+import Navbar from "../Components/Navbar";
+import Search from "../Components/Search";
 
 class SearchPage extends Component {
   componentDidMount() {
@@ -17,16 +19,28 @@ class SearchPage extends Component {
       this.props.fetchSearchedNews(newSearchQuery);
     }
   }
-
   render() {
-    return this.props.news ? (
-      <News News={this.props.news} mode='search' />
-    ) : (
-      <h1>Loading</h1>
-    );
+    if (this.props.news) {
+      return (
+        <>
+          <Navbar />
+          <Search />
+          <SearchedNews News={this.props.news} mode='search' />{" "}
+        </>
+      );
+    } else {
+      return (
+        <>
+          <Navbar />
+          <Search />
+          <h1>Loading</h1>;
+        </>
+      );
+    }
   }
 }
 const mapStateToProps = (storeState) => {
+  console.log(storeState.newsState.news);
   return {
     news: storeState.newsState.news,
   };

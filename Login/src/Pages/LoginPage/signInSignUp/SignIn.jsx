@@ -35,12 +35,7 @@ const SignIn = ({ user, setUser }) => {
         <input type='password' placeholder='Password' />
       </div>
 
-      <input
-        type='submit'
-        value='Login'
-        className='btn solid'
-        onSuccess={responseSubmit}
-      />
+      <input type='submit' value='Login' className='btn solid' />
       <p className='social-text'>Or Sign in with social platform</p>
 
       <div className='social-media'>
@@ -51,10 +46,10 @@ const SignIn = ({ user, setUser }) => {
           <i className='fab fa-twitter'></i>
         </a>
         <GoogleLogin
-          style={{ border: "none" }}
           clientId={Keys.Client_id}
           render={(renderProps) => (
             <button
+              style={{ border: "none", background: "none" }}
               onClick={renderProps.onClick}
               disabled={renderProps.disabled}>
               <a href='#' className='social-icon'>
@@ -67,7 +62,7 @@ const SignIn = ({ user, setUser }) => {
           onFailure={responseGoogle}
           cookiePolicy={"single_host_origin"}
         />
-        ,
+
         {/* <GoogleLogin
           clientId={}
           onSuccess={responseGoogle}
