@@ -4,6 +4,14 @@ import { fetchSearchedNews } from "../Redux/actions/newsAction";
 import SearchedNews from "../Components/searchedNews";
 import Navbar from "../Components/Navbar";
 import Search from "../Components/Search";
+import PuffLoader from "react-spinners/PuffLoader";
+import { css } from "@emotion/core";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 
 class SearchPage extends Component {
   componentDidMount() {
@@ -20,12 +28,20 @@ class SearchPage extends Component {
     }
   }
   render() {
-    if (this.props.news) {
+    // console.log(this.props.news);
+    if (!this.props.news) {
       return (
         <>
           <Navbar />
           <Search />
-          <SearchedNews News={this.props.news} mode='search' />{" "}
+          <div className='sweet-loading'>
+            <PuffLoader
+              css={override}
+              size={150}
+              color={"#123abc"}
+              loading={true}
+            />
+          </div>
         </>
       );
     } else {
@@ -33,7 +49,7 @@ class SearchPage extends Component {
         <>
           <Navbar />
           <Search />
-          <h1>Loading</h1>;
+          <SearchedNews news={this.props.news} mode='search' />{" "}
         </>
       );
     }

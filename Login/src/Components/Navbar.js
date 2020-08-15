@@ -8,7 +8,7 @@ import { Navbar, Nav, NavItem, NavbarBrand } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
 import Keys from "../config";
 // import ReactTooltip from "react-tooltip";
-import SideBar from "./sideBar";
+import Select from "./Select";
 
 const SuNavbar = ({ user, logOutUser }) => {
   let userData;
@@ -35,15 +35,23 @@ const SuNavbar = ({ user, logOutUser }) => {
           <h1 className="webNameH1">StayUpdated</h1>
         </Link>
       </NavbarBrand>
+<<<<<<< HEAD
       <Nav className="mr-auto" className="positions" navbar>
         {!user ? (
           <NavItem>
             <NavLink className="ml-3" to="/login">
+=======
+      <Nav className='mr-auto' className='positions'>
+        {!user ? (
+          <NavItem style={{ margin: "5px" }}>
+            <NavLink className='ml-3' to='/login'>
+>>>>>>> 4e60c923bde5944610ad1e1b6be5eeebc593fba5
               Login
             </NavLink>
           </NavItem>
         ) : (
           <>
+<<<<<<< HEAD
             <NavItem id="navItem1">
               <Link to="/bookmark">
                 <img src={bookmark} className="App-logo" alt="logo" />
@@ -51,6 +59,18 @@ const SuNavbar = ({ user, logOutUser }) => {
             </NavItem>
             <NavItem id="navItem2">
               <NavLink to="/profile/" data-tip="Profile">
+=======
+            <NavItem>
+              <Select />
+            </NavItem>
+            <NavItem style={{ margin: "5px" }}>
+              <Link to='/bookmark'>
+                <img src={bookmark} className='App-logo' alt='logo' />
+              </Link>
+            </NavItem>
+            <NavItem style={{ margin: "5px" }}>
+              <NavLink to='/profile/' data-tip='Profile'>
+>>>>>>> 4e60c923bde5944610ad1e1b6be5eeebc593fba5
                 <img
                   src={userData.imageUrl}
                   className="App-logo-profile App-logo"
@@ -58,7 +78,11 @@ const SuNavbar = ({ user, logOutUser }) => {
                 />
               </NavLink>
             </NavItem>
+<<<<<<< HEAD
             <NavItem id="navItem3">
+=======
+            <NavItem style={{ margin: "5px" }}>
+>>>>>>> 4e60c923bde5944610ad1e1b6be5eeebc593fba5
               <GoogleLogout
                 clientId={Keys.Client_id}
                 buttonText="Logout"

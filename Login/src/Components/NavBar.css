@@ -34,6 +34,7 @@ Nav {
 NavItem {
   color: aliceblue;
   list-style-type: none;
+  margin: 5px;
 }
 
 a {
@@ -58,8 +59,9 @@ h1 {
 }
 
 .App-logo {
-  height: 06vmin;
+  height: 07vmin;
   pointer-events: none;
+  border-radius: 50%;
 }
 .App-logo-profile {
   border-radius: 20px;

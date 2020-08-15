@@ -2,6 +2,12 @@ import React from "react";
 import Flippy, { FrontSide, BackSide } from "react-flippy";
 import "./ListNews.css";
 
+// const limitDescription = (description, letterCount) => {
+//   return description.length <= letterCount
+//     ? description
+//     : `${description.slice(0, letterCount)}...`;
+// };
+
 const ListNews = ({ snews, flippy, mode }) => {
   if (snews !== undefined) {
     return (
