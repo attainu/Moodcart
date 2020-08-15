@@ -29,43 +29,43 @@ const SuNavbar = ({ user, logOutUser }) => {
   };
 
   return (
-    <Navbar className='bgColor' expand='md'>
+    <Navbar className="bgColor" expand="md">
       <NavbarBrand>
-        <Link to='/' id='link'>
-          {" "}
-          <h1>StayUpdated</h1>{" "}
+        <Link to="/" id="link" className="webName">
+          <h1 className="webNameH1">StayUpdated</h1>
         </Link>
       </NavbarBrand>
-      {/* <SideBar /> */}
-      <Nav className='mr-auto' className='positions'>
+      <Nav className="mr-auto" className="positions" navbar>
         {!user ? (
           <NavItem>
-            <NavLink className='ml-3' to='/login'>
+            <NavLink className="ml-3" to="/login">
               Login
             </NavLink>
           </NavItem>
         ) : (
           <>
-            <NavItem>
-              <Link to='/bookmark'>
-                <img src={bookmark} className='App-logo' alt='logo' />
+            <NavItem id="navItem1">
+              <Link to="/bookmark">
+                <img src={bookmark} className="App-logo" alt="logo" />
               </Link>
             </NavItem>
-            <NavItem>
-              <NavLink to='/profile/' data-tip='Profile'>
+            <NavItem id="navItem2">
+              <NavLink to="/profile/" data-tip="Profile">
                 <img
                   src={userData.imageUrl}
-                  className='App-logo-profile App-logo'
-                  alt='logo'
+                  className="App-logo-profile App-logo"
+                  alt="logo"
                 />
               </NavLink>
             </NavItem>
-            <GoogleLogout
-              clientId={Keys.Client_id}
-              buttonText='Logout'
-              onLogoutSuccess={handleLogoutSuccess}
-              onFailure={handleLogoutFailure}
-            />
+            <NavItem id="navItem3">
+              <GoogleLogout
+                clientId={Keys.Client_id}
+                buttonText="Logout"
+                onLogoutSuccess={handleLogoutSuccess}
+                onFailure={handleLogoutFailure}
+              />
+            </NavItem>
           </>
         )}
       </Nav>

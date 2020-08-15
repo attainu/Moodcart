@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { fetchTrendingNews } from "../Redux/actions/newsAction";
-import News from "../Components/news";
+import { News } from "../Components/news";
 import Navbar from "../Components/Navbar";
+import Search from "../Components/Search";
 import "./home.css";
 
 class HomePage extends Component {
@@ -11,12 +12,13 @@ class HomePage extends Component {
     this.props.fetchTrendingNews();
   }
   render() {
-    if (!this.props.user) return <Redirect to="/login" />;
+    if (!this.props.user) return <Redirect to='/login' />;
     return !this.props.user ? (
-      <Redirect to="/login" />
+      <Redirect to='/login' />
     ) : (
       <>
         <Navbar />
+        <Search />
         <News news={this.props.news} />
       </>
       // <h1>Hello</h1>
