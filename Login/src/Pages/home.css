@@ -1,0 +1,7 @@
+/* . { */
+/* padding: 10px;
+} */
+
+:not(NavBar) {
+  padding: 0%;
+}
