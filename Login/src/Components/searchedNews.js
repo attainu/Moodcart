@@ -11,14 +11,19 @@ const override = css`
   border-color: red;
 `;
 
-const SearchedNews = ({ news, mode = "search", ...restprops }) => {
+const SearchedNews = ({ news, mode = "search" }) => {
   console.log(news);
   if (news) {
     return (
       <CardDeck
-        style={{ marginLeft: "60px", display: "flex", flexWrap: "wrap" }}>
-        {news.map((snews) => (
-          <ListSearchedNews key={snews.id} snews={snews} mode={mode} />
+        style={{
+          marginLeft: "60px",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-Around",
+        }}>
+        {news.map((news) => (
+          <ListSearchedNews key={news.name} snews={news} mode={mode} />
         ))}
       </CardDeck>
     );

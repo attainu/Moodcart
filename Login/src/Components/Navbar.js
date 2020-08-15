@@ -8,7 +8,7 @@ import { Navbar, Nav, NavItem, NavbarBrand } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
 import Keys from "../config";
 // import ReactTooltip from "react-tooltip";
-import SideBar from "./sideBar";
+import Select from "./Select";
 
 const SuNavbar = ({ user, logOutUser }) => {
   let userData;
@@ -36,9 +36,9 @@ const SuNavbar = ({ user, logOutUser }) => {
           <h1>StayUpdated</h1>{" "}
         </Link>
       </NavbarBrand>
-      <Nav className='mr-auto' className='positions' navbar>
+      <Nav className='mr-auto' className='positions'>
         {!user ? (
-          <NavItem>
+          <NavItem style={{ margin: "5px" }}>
             <NavLink className='ml-3' to='/login'>
               Login
             </NavLink>
@@ -46,11 +46,14 @@ const SuNavbar = ({ user, logOutUser }) => {
         ) : (
           <>
             <NavItem>
+              <Select />
+            </NavItem>
+            <NavItem style={{ margin: "5px" }}>
               <Link to='/bookmark'>
                 <img src={bookmark} className='App-logo' alt='logo' />
               </Link>
             </NavItem>
-            <NavItem>
+            <NavItem style={{ margin: "5px" }}>
               <NavLink to='/profile/' data-tip='Profile'>
                 <img
                   src={userData.imageUrl}
@@ -59,7 +62,7 @@ const SuNavbar = ({ user, logOutUser }) => {
                 />
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem style={{ margin: "5px" }}>
               <GoogleLogout
                 clientId={Keys.Client_id}
                 buttonText='Logout'
