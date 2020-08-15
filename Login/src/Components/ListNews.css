@@ -5,4 +5,19 @@
   margin: 20px;
   transition: 2s;
   overflow: hidden;
+  padding-right: 10px;
+  overflow: hidden;
+  position: inherit;
+}
+
+.frontFlip {
+  background: #4481eb;
+  color: white;
+  position: relative;
+  padding: 0px;
+}
+
+.backFlip {
+  color: white;
+  background: #4481eb;
 }

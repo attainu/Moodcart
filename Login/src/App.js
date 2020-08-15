@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "./Components/ListNews.css";
 import Container from "./Pages/LoginPage/Container/Container";
 import { Route, Redirect, Switch } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
@@ -9,18 +10,18 @@ import SearchPage from "./Pages/SearchPage";
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Switch>
-        <Route path='/login' component={Container} />
+        <Route path="/login" component={Container} />
         <Route
           exact
-          path='/home'
+          path="/home"
           render={(routeProps) => <HomePage {...routeProps} />}
         />
-        <Route exact path='/profile' component={ProfilePage} />
-        <Route exact path='/bookmark' component={BookmarkPage} />
-        <Route exact path='/Search/:searchQuery' component={SearchPage} />
-        <Redirect to='/home' />
+        <Route exact path="/profile" component={ProfilePage} />
+        <Route exact path="/bookmark" component={BookmarkPage} />
+        <Route exact path="/Search/:searchQuery" component={SearchPage} />
+        <Redirect to="/home" />
       </Switch>
     </div>
   );
