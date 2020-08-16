@@ -12,7 +12,7 @@ const override = css`
 `;
 
 const SearchedNews = ({ news, mode = "search" }) => {
-  console.log(news);
+  console.log("data", news.value);
   if (news) {
     return (
       <CardDeck
