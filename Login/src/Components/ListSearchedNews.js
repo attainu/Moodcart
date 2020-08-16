@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./ListSearchNews.css";
+import News from "./news.jpg";
 
 const ListSearchedNews = ({ snews, mode }) => {
-  // const Url = snews.image.contentUrl;
-  // console.log(Url);
+  // console.log(snews.image.contentUrl);
   if (snews == undefined) {
     return (
       <>
@@ -25,9 +25,10 @@ const ListSearchedNews = ({ snews, mode }) => {
         <div className='row no-gutters'>
           <div className='col-md-4'>
             <img
-              src={snews.image.contentUrl}
+              src={
+                snews.hasOwnProperty("image") ? snews.image.contentUrl : News
+              }
               className='imgStyle'
-              style={{}}
               alt='...'
             />
           </div>

@@ -1,13 +1,14 @@
 import React from "react";
 import Flippy, { FrontSide, BackSide } from "react-flippy";
+import "./ListNews.css";
 
-// const limitDescription = (description, letterCount) => {
-//   return description.length <= letterCount
-//     ? description
-//     : `${description.slice(0, letterCount)}...`;
-// };
+const limitDescription = (text, letterCount) => {
+  return text.length <= letterCount ? text : `${text.slice(0, letterCount)}...`;
+};
 
 const ListNews = ({ snews, flippy, mode }) => {
+  // const text = snews.description;
+
   if (snews !== undefined) {
     return (
       <Flippy
@@ -19,15 +20,17 @@ const ListNews = ({ snews, flippy, mode }) => {
         className='flips'
         style={{
           textAlign: "left",
-          width: "400px",
-          height: "500px",
+          width: "390px",
+          height: "448px",
           margin: "20px",
           transition: "2s",
-          paddingRight: "10px",
           overflow: "hidden",
           position: "inherit",
+          borderRadius: "10px",
+          // border: "0.01px solid white",
         }}>
         <FrontSide
+          className='frontFlip'
           style={{
             background: "#4481eb",
             color: "white",
@@ -38,24 +41,23 @@ const ListNews = ({ snews, flippy, mode }) => {
             src={snews.image}
             alt='img'
             style={{
-              width: "390px",
-              height: "200px",
+              width: "100%",
+              height: "220px",
               background: "#4481eb",
               color: "white",
             }}
           />
           <div style={{ margin: "5px" }}>
-            <h4>
-              <span style={{ fontWeight: "bold" }}>Title: </span>
-              {snews.title}
-            </h4>
-            <p>
-              <span style={{ fontWeight: "bold" }}>Description: </span>
-              {snews.description}
-            </p>
+            <h4>{snews.title}...</h4>
+            <p>{snews.description}</p>
           </div>
         </FrontSide>
-        <BackSide style={{ color: "white", background: "#4481eb" }}>
+        <BackSide
+          className='backFlip'
+          style={{
+            color: "white",
+            background: "#4481eb",
+          }}>
           <p>{snews.summarization}</p>
         </BackSide>
       </Flippy>

@@ -6,6 +6,7 @@ import { News } from "../Components/news";
 import Navbar from "../Components/Navbar";
 import Search from "../Components/Search";
 import "./home.css";
+import Category from "../Components/category";
 
 class HomePage extends Component {
   componentDidMount() {
@@ -27,7 +28,7 @@ class HomePage extends Component {
 }
 
 const mapStateToProps = (storeState) => {
-  console.log(storeState.newsState.news);
+  // console.log(storeState.newsState.news);
   return {
     user: storeState.userState.user,
     news: storeState.newsState.news,
