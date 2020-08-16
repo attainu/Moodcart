@@ -11,7 +11,7 @@ const override = css`
 `;
 
 const CategoryNews = ({ news, mode = "category" }) => {
-  console.log("data", news.value);
+  console.log(news.value);
   if (news) {
     return (
       <CardDeck

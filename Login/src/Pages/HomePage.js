@@ -5,6 +5,7 @@ import { fetchTrendingNews } from "../Redux/actions/newsAction";
 import { News } from "../Components/news";
 import Navbar from "../Components/Navbar";
 import Search from "../Components/Search";
+import Select from "../Components/Select";
 import "./home.css";
 import Category from "../Components/category";
 
@@ -19,6 +20,7 @@ class HomePage extends Component {
     ) : (
       <>
         <Navbar />
+        <Select />
         <Search />
         <News news={this.props.news} />
       </>
