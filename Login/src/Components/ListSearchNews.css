@@ -1,6 +1,20 @@
-.imgStyle {
-  width: 550px;
-  height: 150px;
+.searchCard {
+  width: 400px;
+  height: 300px;
+  background: white;
+  /* background: #1269ff; */
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  border-radius: 5px;
+  /* color: white; */
+  /* border: 2px solid white; */
+}
+
+.imgBox {
+  width: 400px;
+  height: 200px;
+  border-radius: 5px 5px 0px 0px;
 }
 /* 
 // .button-primary {

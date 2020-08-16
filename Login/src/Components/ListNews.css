@@ -11,6 +11,7 @@
 }
 
 .frontFlip {
+  /* background: red; */
   background: #4481eb;
   color: white;
   position: relative;
@@ -19,5 +20,6 @@
 
 .backFlip {
   color: white;
+  /* background: red; */
   background: #4481eb;
 }

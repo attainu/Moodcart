@@ -39,6 +39,7 @@ class Search extends Component {
             width: "300px",
             height: "50px",
             borderWidth: "5px",
+            // borderColor: "red",
             borderColor: "#5995FD",
             borderRadius: "25px",
             background: "black",

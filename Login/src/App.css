@@ -44,7 +44,8 @@ input {
   width: 2000px;
   height: 2000px;
   border-radius: 50%;
-  background: linear-gradient(-45deg, #4481eb, #04befe);
+  background: linear-gradient(-45deg, rgb(236, 83, 83), red);
+  /* background: linear-gradient(-45deg, #4481eb, #04befe); */
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
@@ -139,6 +140,7 @@ form.sign-up-form {
   outline: none;
   border-radius: 49px;
   cursor: pointer;
+  /* background-color: red; */
   background-color: #5995fd;
   color: #fff;
   text-transform: uppercase;
