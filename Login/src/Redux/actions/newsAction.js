@@ -32,7 +32,6 @@ export const fetchSearchedNews = (searchQuery) => async (dispatch) => {
     const response = await axios(
       `https://bing-news-search1.p.rapidapi.com/news/search?count=20&textDecorations=true&setLang=en&cc=in&freshness=Day&originalImg=true&textFormat=Raw&safeSearch=Off&q=${searchQuery}`,
       {
-        // the value of last part o the url needs to set
         method: "GET",
         headers: {
           "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
@@ -52,12 +51,13 @@ export const fetchSearchedNews = (searchQuery) => async (dispatch) => {
   }
 };
 
-export const fetchCategoryWiseNews = () => async (dispatch) => {
+export const fetchCategoryWiseNews = (category) => async (dispatch) => {
+  console.log(category);
   try {
     dispatch({ type: GET_NEWS, payload: null });
     dispatch({ type: TOGGLE_NEWS_FETCHING_STATE });
     const response = await axios(
-      "https://bing-news-search1.p.rapidapi.com/news?textDecorations=true&count=30&cc=in&safeSearch=Off&category=Entertainment&textFormat=Raw",
+      `https://bing-news-search1.p.rapidapi.com/news?textDecorations=true&count=30&cc=in&safeSearch=Off&category=${category}&textFormat=Raw`,
       {
         method: "GET",
         headers: {

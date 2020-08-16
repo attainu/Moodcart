@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-// import ListNews from "./ListNews";
 import { CardDeck } from "reactstrap";
-import ListSearchedNews from "./ListSearchedNews";
+import ListSearchedNews from "./ListCategoryNews";
 import { css } from "@emotion/core";
 import PuffLoader from "react-spinners/PuffLoader";
 
@@ -11,26 +10,25 @@ const override = css`
   border-color: red;
 `;
 
-const SearchedNews = ({ news, mode = "search" }) => {
+const CategoryNews = ({ news, mode = "category" }) => {
   console.log("data", news.value);
   if (news) {
     return (
       <CardDeck
         style={{
-          justifyContent: "center",
+          marginLeft: "60px",
           display: "flex",
           flexWrap: "wrap",
-          // justifyContent: "space-Around",
-        }}
-      >
-        {news.map((news) => (
+          justifyContent: "space-Around",
+        }}>
+        {news.value.map((news) => (
           <ListSearchedNews key={news.name} snews={news} mode={mode} />
         ))}
       </CardDeck>
     );
   } else {
     return (
-      <div className="sweet-loading">
+      <div className='sweet-loading'>
         <PuffLoader
           css={override}
           size={150}
@@ -41,4 +39,4 @@ const SearchedNews = ({ news, mode = "search" }) => {
     );
   }
 };
-export default SearchedNews;
+export default CategoryNews;

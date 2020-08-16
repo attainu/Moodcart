@@ -2,22 +2,22 @@ import React from "react";
 import Flippy, { FrontSide, BackSide } from "react-flippy";
 import "./ListNews.css";
 
-// const limitDescription = (description, letterCount) => {
-//   return description.length <= letterCount
-//     ? description
-//     : `${description.slice(0, letterCount)}...`;
-// };
+const limitDescription = (text, letterCount) => {
+  return text.length <= letterCount ? text : `${text.slice(0, letterCount)}...`;
+};
 
 const ListNews = ({ snews, flippy, mode }) => {
+  // const text = snews.description;
+
   if (snews !== undefined) {
     return (
       <Flippy
         flipOnHover={false}
         flipOnClick={true}
         mode={mode}
-        flipDirection="horizontal"
+        flipDirection='horizontal'
         ref={(r) => (flippy = r)}
-        className="flips"
+        className='flips'
         style={{
           textAlign: "left",
           width: "390px",
@@ -28,21 +28,19 @@ const ListNews = ({ snews, flippy, mode }) => {
           position: "inherit",
           borderRadius: "10px",
           // border: "0.01px solid white",
-        }}
-      >
+        }}>
         <FrontSide
-          className="frontFlip"
+          className='frontFlip'
           style={{
             background: "#4481eb",
             // background: "red",
             color: "white",
             position: "relative",
             padding: "0px",
-          }}
-        >
+          }}>
           <img
             src={snews.image}
-            alt="img"
+            alt='img'
             style={{
               width: "100%",
               height: "220px",
@@ -56,12 +54,11 @@ const ListNews = ({ snews, flippy, mode }) => {
           </div>
         </FrontSide>
         <BackSide
-          className="backFlip"
+          className='backFlip'
           style={{
             color: "white",
             background: "#4481eb",
-          }}
-        >
+          }}>
           <p>{snews.summarization}</p>
         </BackSide>
       </Flippy>

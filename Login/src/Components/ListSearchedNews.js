@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./ListSearchNews.css";
+import News from "./news.jpg";
 
 const ListSearchedNews = ({ snews, mode }) => {
   if (snews == undefined) {
@@ -11,8 +12,12 @@ const ListSearchedNews = ({ snews, mode }) => {
   } else {
     console.log(snews);
     return (
-      <div className="searchCard">
-        {/* <img className="imgBox" src={snews.image.contentUrl} alt="newsPhoto" /> */}
+      <div className='searchCard'>
+        <img
+          className='imgBox'
+          src={snews.hasOwnProperty("image") ? snews.image.contentUrl : News}
+          alt='newsPhoto'
+        />
         <h3>{snews.name}</h3>
       </div>
     );

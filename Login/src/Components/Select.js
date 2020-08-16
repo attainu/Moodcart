@@ -1,34 +1,37 @@
-import React from "react";
-import Select from "react-select";
-import "./select.css";
+import React, { Component } from "react";
+class Select extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "coconut" };
 
-const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "3", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-class SelectCountry extends React.Component {
-  state = {
-    selectedOption: null,
-    country: "",
-  };
-  handleChange = (selectedOption) => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption.value);
-  };
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    alert("Your favorite flavor is: " + this.state.value);
+    event.preventDefault();
+  }
   render() {
-    const { selectedOption } = this.state;
-
     return (
-      <Select
-        styles={{ borderRadius: "20%" }}
-        className='style'
-        value={selectedOption}
-        onChange={this.handleChange}
-        options={options}
-      />
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Pick your favorite flavor:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value='grapefruit'>Grapefruit</option>
+            <option value='lime'>Lime</option>
+            <option value='coconut'>Coconut</option>
+            <option value='mango'>Mango</option>
+          </select>
+        </label>
+        <input type='submit' value='Submit' />
+      </form>
     );
   }
 }
-export default SelectCountry;
+
+export default Select;
