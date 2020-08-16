@@ -34,6 +34,7 @@ export const News = ({ news, mode = "trending", ...restprops }) => {
         <PuffLoader
           css={override}
           size={150}
+          // color={"red"}
           color={"#123abc"}
           loading={true}
         />
@@ -60,6 +61,7 @@ export const SearchedNews = ({ news, mode = "search", ...restprops }) => {
         <PuffLoader
           css={override}
           size={150}
+          // color={"red"}
           color={"#123abc"}
           loading={true}
         />

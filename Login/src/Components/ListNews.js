@@ -34,6 +34,7 @@ const ListNews = ({ snews, flippy, mode }) => {
           className="frontFlip"
           style={{
             background: "#4481eb",
+            // background: "red",
             color: "white",
             position: "relative",
             padding: "0px",
@@ -50,7 +51,7 @@ const ListNews = ({ snews, flippy, mode }) => {
             }}
           />
           <div style={{ margin: "5px" }}>
-            <h2>{snews.title}</h2>
+            <h3>{snews.title}</h3>
             <p>{snews.description}</p>
           </div>
         </FrontSide>

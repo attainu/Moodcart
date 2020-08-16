@@ -21,6 +21,7 @@ NavBar {
 
 .bgColor {
   background-color: #4481eb;
+  /* background-color: red; */
   height: 80px;
   padding: 10px;
   display: flex;

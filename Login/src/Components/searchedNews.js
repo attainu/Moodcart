@@ -17,11 +17,12 @@ const SearchedNews = ({ news, mode = "search" }) => {
     return (
       <CardDeck
         style={{
-          marginLeft: "60px",
+          justifyContent: "center",
           display: "flex",
           flexWrap: "wrap",
-          justifyContent: "space-Around",
-        }}>
+          // justifyContent: "space-Around",
+        }}
+      >
         {news.map((news) => (
           <ListSearchedNews key={news.name} snews={news} mode={mode} />
         ))}
@@ -29,7 +30,7 @@ const SearchedNews = ({ news, mode = "search" }) => {
     );
   } else {
     return (
-      <div className='sweet-loading'>
+      <div className="sweet-loading">
         <PuffLoader
           css={override}
           size={150}
