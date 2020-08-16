@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import ListNews from "./ListNews";
 import { CardDeck } from "reactstrap";
 import ListSearchedNews from "./ListSearchedNews";
 import { css } from "@emotion/core";
