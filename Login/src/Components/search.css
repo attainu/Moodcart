@@ -10,8 +10,9 @@
   border-radius: 25px;
   background: white;
   padding-left: 15px;
-  color: white;
+  color: black;
   outline: none;
+  font-size: 14px;
 }
 
 .searchForm {
