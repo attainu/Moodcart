@@ -30,7 +30,6 @@ class HomePage extends Component {
 }
 
 const mapStateToProps = (storeState) => {
-  // console.log(storeState.newsState.news);
   return {
     user: storeState.userState.user,
     news: storeState.newsState.news,

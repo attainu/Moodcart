@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 class Select extends Component {
-  state = {
-    country: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = { country: "" };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
   handleChange = (event) => {
-    this.setState({ value: event.target.value });
+    this.setState({ country: event.target.value });
     console.log(event.target.value);
   };
 
@@ -18,21 +22,14 @@ class Select extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit} value={this.state.country}>
+      <form onSubmit={this.handleSubmit}>
         <label>
-          <select onChange={this.handleChange}>
-            <option value='au' type='submit'>
-              Austrelia
-            </option>
-            <option value='in' type='submit'>
-              India
-            </option>
-            <option value='us' type='submit'>
-              America
-            </option>
-            <option value='jp' type='submit'>
-              Japan
-            </option>
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value='Australia'>Australia</option>
+            <option value='India'>India</option>
+            <option value='us'>America</option>
+            <option value='jp'>Japan</option>
+            <option value='it'>Itely</option>
           </select>
         </label>
         <input type='submit' value='Submit' />

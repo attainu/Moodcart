@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { fetchSearchedNews } from "../Redux/actions/newsAction";
 import SearchedNews from "../Components/searchedNews";
 import Navbar from "../Components/Navbar";
-import { Redirect } from "react-router-dom";
 import Search from "../Components/Search";
 import PuffLoader from "react-spinners/PuffLoader";
 import { css } from "@emotion/core";

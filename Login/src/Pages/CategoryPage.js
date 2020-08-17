@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchCategoryWiseNews } from "../Redux/actions/newsAction";
-import SearchedNews from "../Components/CategoryNews";
+import CategoryNews from "../Components/CategoryNews";
 import Navbar from "../Components/Navbar";
 import Search from "../Components/Search";
 import { Redirect } from "react-router-dom";
@@ -29,7 +29,6 @@ class CategoryPage extends Component {
     }
   }
   render() {
-    if (this.props.user) return <Redirect to='/login' />;
     if (!this.props.news) {
       return (
         <>
@@ -50,7 +49,7 @@ class CategoryPage extends Component {
         <>
           <Navbar />
           <Search />
-          <SearchedNews news={this.props.news} mode='category' />{" "}
+          <CategoryNews news={this.props.news} mode='category' />{" "}
         </>
       );
     }

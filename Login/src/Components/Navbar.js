@@ -5,7 +5,7 @@ import { logOutUser } from "../Redux/actions/userAction";
 import { connect } from "react-redux";
 import bookmark from "./bookmark.svg";
 import { Navbar, Nav, NavItem, NavbarBrand } from "reactstrap";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, Redirect } from "react-router-dom";
 import Keys from "../config";
 import Category from "./category";
 
@@ -40,11 +40,7 @@ const SuNavbar = ({ user, logOutUser }) => {
       </div>
       <div className="positions" navbar>
         {!user ? (
-          <div>
-            <div className="ml-3" to="/login">
-              Login
-            </div>
-          </div>
+          <Redirect to="/login" />
         ) : (
           <>
             <Category />
