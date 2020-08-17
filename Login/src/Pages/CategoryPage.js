@@ -29,13 +29,13 @@ class CategoryPage extends Component {
     }
   }
   render() {
-    if (!this.props.user) return <Redirect to='/login' />;
+    // if (!this.props.user) return <Redirect to='/login' />;
     if (!this.props.news) {
       return (
         <>
           <Navbar />
           <Search />
-          <div className='sweet-loading'>
+          <div className="sweet-loading">
             <PuffLoader
               css={override}
               size={150}
@@ -50,7 +50,7 @@ class CategoryPage extends Component {
         <>
           <Navbar />
           <Search />
-          <SearchedNews news={this.props.news} mode='contry' />{" "}
+          <SearchedNews news={this.props.news} mode="contry" />{" "}
         </>
       );
     }

@@ -21,7 +21,8 @@ export const News = ({ news, mode = "trending", ...restprops }) => {
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
-        }}>
+        }}
+      >
         {news.map((snews) => (
           <ListNews key={snews.id} snews={snews} mode={mode} />
         ))}
@@ -29,11 +30,10 @@ export const News = ({ news, mode = "trending", ...restprops }) => {
     );
   } else {
     return (
-      <div className='sweet-loading'>
+      <div className="sweet-loading">
         <PuffLoader
           css={override}
           size={150}
-          // color={"red"}
           color={"#123abc"}
           loading={true}
         />
@@ -47,7 +47,8 @@ export const SearchedNews = ({ news, mode = "search", ...restprops }) => {
   if (news) {
     return (
       <CardDeck
-        style={{ marginLeft: "60px", display: "flex", flexWrap: "wrap" }}>
+        style={{ marginLeft: "60px", display: "flex", flexWrap: "wrap" }}
+      >
         {news.map((snews) => (
           <ListSearchedNews key={snews.id} snews={snews} mode={mode} />
         ))}
@@ -55,11 +56,10 @@ export const SearchedNews = ({ news, mode = "search", ...restprops }) => {
     );
   } else {
     return (
-      <div className='sweet-loading'>
+      <div className="sweet-loading">
         <PuffLoader
           css={override}
           size={150}
-          // color={"red"}
           color={"#123abc"}
           loading={true}
         />
