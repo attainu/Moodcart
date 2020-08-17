@@ -24,7 +24,7 @@ function App() {
         <Route exact path='/bookmark' component={BookmarkPage} />
         <Route exact path='/Search/:searchQuery' component={SearchPage} />
         <Route exact path='/category/:category' component={CategoryPage} />
-        <Route exact path='/country/:country' component={CountryNewsPage} />
+        {/* <Route exact path='/country/:country' component={CountryNewsPage} /> */}
         <Redirect to='/home' />
       </Switch>
     </div>

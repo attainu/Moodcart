@@ -29,7 +29,7 @@ class CategoryPage extends Component {
     }
   }
   render() {
-    if (!this.props.user) return <Redirect to='/login' />;
+    if (this.props.user) return <Redirect to='/login' />;
     if (!this.props.news) {
       return (
         <>
@@ -50,7 +50,7 @@ class CategoryPage extends Component {
         <>
           <Navbar />
           <Search />
-          <SearchedNews news={this.props.news} mode='contry' />{" "}
+          <SearchedNews news={this.props.news} mode='category' />{" "}
         </>
       );
     }

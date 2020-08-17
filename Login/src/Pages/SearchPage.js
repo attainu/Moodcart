@@ -30,7 +30,7 @@ class SearchPage extends Component {
     }
   }
   render() {
-    if (!this.props.user) return <Redirect to='/login' />;
+    // if (!this.props.user) return <Redirect to='/login' />;
     if (!this.props.news) {
       return (
         <div className='searchPage'>

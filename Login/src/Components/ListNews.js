@@ -6,9 +6,7 @@ const limitDescription = (text, letterCount) => {
   return text.length <= letterCount ? text : `${text.slice(0, letterCount)}...`;
 };
 
-const ListNews = ({ snews, flippy, mode }) => {
-  // const text = snews.description;
-
+const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
   if (snews !== undefined) {
     return (
       <Flippy
@@ -24,7 +22,10 @@ const ListNews = ({ snews, flippy, mode }) => {
           position: "inherit",
           borderRadius: "10px",
           // border: "0.01px solid white",
-        }}>
+        }}
+        flipOnClick={true} // default false
+        flipDirection='horizontal' // horizontal or vertical
+        ref={(r) => (flippy = r)}>
         <FrontSide
           className='frontFlip'
           style={{
@@ -47,12 +48,6 @@ const ListNews = ({ snews, flippy, mode }) => {
           <div style={{ margin: "5px" }}>
             <h3>{snews.title}</h3>
             <p>{snews.description.slice(0, 125)}...</p>
-            <button
-              flipOnClick={true}
-              flipDirection='horizontal'
-              ref={(r) => (flippy = r)}>
-              Read more
-            </button>
           </div>
         </FrontSide>
         <BackSide
@@ -62,6 +57,18 @@ const ListNews = ({ snews, flippy, mode }) => {
             background: "#4481eb",
           }}>
           <p>{snews.summarization}</p>
+          <span
+            style={{
+              fontSize: "12px",
+              position: "absolute",
+              bottom: "10px",
+              width: "100%",
+            }}
+            isF>
+            {restprops.children}
+            <br />
+            (BACK SIDE)
+          </span>
         </BackSide>
       </Flippy>
     );
