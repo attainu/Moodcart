@@ -1,13 +1,31 @@
 import React from "react";
 import Search from "../Components/Search";
 import Navbar from "../Components/Navbar";
-const profilePage = () => {
+import { connect } from "react-redux";
+import "./profilePage.css";
+
+const profilePage = ({ user }) => {
+  console.log(user);
   return (
-    <div>
+    <div className="profilePage">
       <Navbar />
-      <h1>This is profile Page</h1>
+      <div className="profileContainer">
+        <div className="profileCard">
+          <img
+            className="userImage"
+            src={user.imageUrl}
+            alt="User Profile Image"
+          />
+          <h2 style={{ color: "white" }}>Name:- {user.name}</h2>
+          <h3 style={{ color: "white" }}>Email:- {user.email}</h3>
+        </div>
+      </div>
     </div>
   );
 };
-
-export default profilePage;
+const mapStateToProps = (storeState) => {
+  return {
+    user: storeState.userState.user,
+  };
+};
+export default connect(mapStateToProps)(profilePage);
