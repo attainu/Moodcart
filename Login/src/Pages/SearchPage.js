@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchSearchedNews } from "../Redux/actions/newsAction";
 import SearchedNews from "../Components/searchedNews";
 import Navbar from "../Components/Navbar";
+import { Redirect } from "react-router-dom";
 import Search from "../Components/Search";
 import PuffLoader from "react-spinners/PuffLoader";
 import { css } from "@emotion/core";
@@ -29,13 +30,13 @@ class SearchPage extends Component {
     }
   }
   render() {
-    // console.log(this.props.news);
+    if (!this.props.user) return <Redirect to='/login' />;
     if (!this.props.news) {
       return (
-        <div className="searchPage">
+        <div className='searchPage'>
           <Navbar />
           <Search />
-          <div className="sweet-loading">
+          <div className='sweet-loading'>
             <PuffLoader
               css={override}
               size={150}
@@ -47,10 +48,10 @@ class SearchPage extends Component {
       );
     } else {
       return (
-        <div className="searchPage">
+        <div className='searchPage'>
           <Navbar />
           <Search />
-          <SearchedNews news={this.props.news} mode="search" />{" "}
+          <SearchedNews news={this.props.news} mode='search' />{" "}
         </div>
       );
     }

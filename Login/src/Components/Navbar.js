@@ -32,48 +32,47 @@ const SuNavbar = ({ user, logOutUser }) => {
   };
 
   return (
-    <Navbar className="bgColor" expand="md">
-      <NavbarBrand>
+    <div className="navBar" expand="md">
+      <div>
         <Link to="/" id="link" className="webName">
           <h1 className="webNameH1">StayUpdated</h1>
         </Link>
-      </NavbarBrand>
-      <Nav className="mr-auto" className="positions" navbar>
+      </div>
+      <div className="positions" navbar>
         {!user ? (
-          <NavItem>
-            <NavLink className="ml-3" to="/login">
+          <div>
+            <div className="ml-3" to="/login">
               Login
-            </NavLink>
-          </NavItem>
+            </div>
+          </div>
         ) : (
           <>
             <Category />
-            <NavItem id="navItem1">
+            <div id="navItem1">
               <Link to="/bookmark">
                 <img src={bookmark} className="App-logo" alt="logo" />
               </Link>
-            </NavItem>
-            <NavItem id="navItem2">
-              <NavLink to="/profile/" data-tip="Profile">
-                <img
-                  src={userData.imageUrl}
-                  className="App-logo-profile App-logo"
-                  alt="logo"
-                />
-              </NavLink>
-            </NavItem>
-            <NavItem id="navItem3">
+            </div>
+
+            <Link to="/profile/" data-tip="Profile">
+              <img
+                src={userData.imageUrl}
+                className="App-logo-profile App-logo"
+                alt="logo"
+              />
+            </Link>
+            <div id="navItem3">
               <GoogleLogout
                 clientId={Keys.Client_id}
                 buttonText="Logout"
                 onLogoutSuccess={handleLogoutSuccess}
                 onFailure={handleLogoutFailure}
               />
-            </NavItem>
+            </div>
           </>
         )}
-      </Nav>
-    </Navbar>
+      </div>
+    </div>
   );
 };
 const mapStateToProps = (storeState) => {

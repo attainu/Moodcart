@@ -4,6 +4,7 @@ import { fetchCategoryWiseNews } from "../Redux/actions/newsAction";
 import SearchedNews from "../Components/CategoryNews";
 import Navbar from "../Components/Navbar";
 import Search from "../Components/Search";
+import { Redirect } from "react-router-dom";
 import PuffLoader from "react-spinners/PuffLoader";
 import { css } from "@emotion/core";
 
@@ -28,6 +29,7 @@ class CategoryPage extends Component {
     }
   }
   render() {
+    if (!this.props.user) return <Redirect to='/login' />;
     if (!this.props.news) {
       return (
         <>

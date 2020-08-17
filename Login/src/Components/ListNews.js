@@ -12,11 +12,7 @@ const ListNews = ({ snews, flippy, mode }) => {
   if (snews !== undefined) {
     return (
       <Flippy
-        flipOnHover={false}
-        flipOnClick={true}
         mode={mode}
-        flipDirection='horizontal'
-        ref={(r) => (flippy = r)}
         className='flips'
         style={{
           textAlign: "left",
@@ -50,7 +46,13 @@ const ListNews = ({ snews, flippy, mode }) => {
           />
           <div style={{ margin: "5px" }}>
             <h3>{snews.title}</h3>
-            <p>{snews.description}</p>
+            <p>{snews.description.slice(0, 125)}...</p>
+            <button
+              flipOnClick={true}
+              flipDirection='horizontal'
+              ref={(r) => (flippy = r)}>
+              Read more
+            </button>
           </div>
         </FrontSide>
         <BackSide

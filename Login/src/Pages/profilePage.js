@@ -1,21 +1,33 @@
 import React from "react";
 import Search from "../Components/Search";
+import { Redirect } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import { connect } from "react-redux";
+import "./profilePage.css";
 
 const profilePage = ({ user }) => {
+  console.log(user);
+  if (!user) return <Redirect to='/login' />;
   return (
-    <div>
+    <div className='profilePage'>
       <Navbar />
-      <h1 style={{ color: "white" }}>{user.name}</h1>
+      <div className='profileContainer'>
+        <div className='profileCard'>
+          <img
+            className='userImage'
+            src={user.imageUrl}
+            alt='User Profile Image'
+          />
+          <h2 style={{ color: "white" }}>Name:- {user.name}</h2>
+          <h3 style={{ color: "white" }}>Email:- {user.email}</h3>
+        </div>
+      </div>
     </div>
   );
 };
-
 const mapStateToProps = (storeState) => {
   return {
     user: storeState.userState.user,
   };
 };
-
 export default connect(mapStateToProps)(profilePage);
