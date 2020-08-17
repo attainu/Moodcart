@@ -25,8 +25,8 @@ class Select extends Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           <select value={this.state.value} onChange={this.handleChange}>
-            <option value='Australia'>Australia</option>
-            <option value='India'>India</option>
+            <option value='au'>Australia</option>
+            <option value='in'>India</option>
             <option value='us'>America</option>
             <option value='jp'>Japan</option>
             <option value='it'>Itely</option>

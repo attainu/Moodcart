@@ -39,6 +39,13 @@ class category extends Component {
         </button>
         <button
           size='lg'
+          value='ScienceAndTechnology'
+          type='submit'
+          onClick={this.handleChange}>
+          ScienceAndTech
+        </button>
+        <button
+          size='lg'
           value='Politics'
           type='submit'
           onClick={this.handleChange}>

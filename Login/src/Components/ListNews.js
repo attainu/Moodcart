@@ -1,10 +1,6 @@
 import React from "react";
-import Flippy, { FrontSide, BackSide } from "react-flippy";
+import Flippy, { FrontSide, BackSide } from "./FlipCard";
 import "./ListNews.css";
-
-const limitDescription = (text, letterCount) => {
-  return text.length <= letterCount ? text : `${text.slice(0, letterCount)}...`;
-};
 
 const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
   if (snews !== undefined) {
@@ -21,16 +17,13 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
           overflow: "hidden",
           position: "inherit",
           borderRadius: "10px",
-          // border: "0.01px solid white",
         }}
-        flipOnClick={true} // default false
-        flipDirection='horizontal' // horizontal or vertical
-        ref={(r) => (flippy = r)}>
+        ref={(r) => (restprops.flippyHorizontal = r)}
+        flipOnClick={false}>
         <FrontSide
           className='frontFlip'
           style={{
             background: "#4481eb",
-            // background: "red",
             color: "white",
             position: "relative",
             padding: "0px",
@@ -46,8 +39,13 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
             }}
           />
           <div style={{ margin: "5px" }}>
-            <h3>{snews.title}</h3>
-            <p>{snews.description.slice(0, 125)}...</p>
+            <h3>{snews.title.slice(0, 80)}...</h3>
+            <p>{snews.description.slice(0, 110)}...</p>
+            <button
+              type='button'
+              onClick={() => restprops.flippyHorizontal.toggle()}>
+              Read more
+            </button>
           </div>
         </FrontSide>
         <BackSide
@@ -57,18 +55,11 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
             background: "#4481eb",
           }}>
           <p>{snews.summarization}</p>
-          <span
-            style={{
-              fontSize: "12px",
-              position: "absolute",
-              bottom: "10px",
-              width: "100%",
-            }}
-            isF>
-            {restprops.children}
-            <br />
-            (BACK SIDE)
-          </span>
+          <button
+            type='button'
+            onClick={() => restprops.flippyHorizontal.toggle()}>
+            Go back
+          </button>
         </BackSide>
       </Flippy>
     );
