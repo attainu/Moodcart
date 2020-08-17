@@ -28,16 +28,9 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
             position: "relative",
             padding: "0px",
           }}>
-          <img
-            src={snews.image}
-            alt='img'
-            style={{
-              width: "100%",
-              height: "220px",
-              background: "#4481eb",
-              color: "white",
-            }}
-          />
+          <div className='newsImageDiv'>
+            <img className='newsImage' src={snews.image} alt='img' />
+          </div>
           <div style={{ margin: "5px" }}>
             <h3>{snews.title.slice(0, 80)}...</h3>
             <p>{snews.description.slice(0, 110)}...</p>

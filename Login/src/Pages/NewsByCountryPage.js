@@ -34,9 +34,11 @@ class countryPage extends Component {
       return (
         <>
           <Navbar />
-          <Select />
-          <Search />
-          <div className='sweet-loading'>
+          <div className="countrySelect">
+            <Select />
+            <Search />
+          </div>
+          <div className="sweet-loading">
             <PuffLoader
               css={override}
               size={150}
@@ -50,9 +52,11 @@ class countryPage extends Component {
       return (
         <>
           <Navbar />
-          <Select />
-          <Search />
-          <CountryNews news={this.props.news} mode='contry' />{" "}
+          <div className="countrySelectForm">
+            <Select />
+            <Search />
+          </div>
+          <CountryNews news={this.props.news} mode="contry" />{" "}
         </>
       );
     }

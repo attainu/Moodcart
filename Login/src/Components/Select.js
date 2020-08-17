@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import "./select.css";
 
 class Select extends Component {
   constructor(props) {
@@ -22,16 +23,18 @@ class Select extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value='au'>Australia</option>
-            <option value='in'>India</option>
-            <option value='us'>America</option>
-            <option value='jp'>Japan</option>
-            <option value='it'>Itely</option>
-          </select>
-        </label>
+      <form className='countrySelectForm' onSubmit={this.handleSubmit}>
+        <select
+          className='countrySelect'
+          value={this.state.value}
+          onChange={this.handleChange}>
+          <option value='Aus'>Australia</option>
+          <option value='in'>India</option>
+          <option value='us'>America</option>
+          <option value='jap'>Japan</option>
+          <option value='italy'>Italy</option>
+        </select>
+
         <input type='submit' value='Submit' />
       </form>
     );

@@ -31,6 +31,7 @@ class category extends Component {
         }}
         size='lg'>
         <button
+          style={{ background: "none" }}
           size='lg'
           value='Entertainment'
           type='submit'
@@ -38,6 +39,7 @@ class category extends Component {
           Entertainment
         </button>
         <button
+          style={{ background: "none" }}
           size='lg'
           value='ScienceAndTechnology'
           type='submit'
@@ -45,6 +47,7 @@ class category extends Component {
           ScienceAndTech
         </button>
         <button
+          style={{ background: "none" }}
           size='lg'
           value='Politics'
           type='submit'
@@ -52,6 +55,7 @@ class category extends Component {
           Politics
         </button>
         <button
+          style={{ background: "none" }}
           size='lg'
           value='Sports'
           type='submit'
@@ -59,6 +63,7 @@ class category extends Component {
           Sports
         </button>
         <button
+          style={{ background: "none" }}
           size='lg'
           value='LifeStyle'
           type='submit'
@@ -66,6 +71,7 @@ class category extends Component {
           LifeStyle
         </button>
         <button
+          style={{ background: "none" }}
           size='lg'
           value='Business'
           type='submit'

@@ -33,40 +33,42 @@ const SuNavbar = ({ user, logOutUser }) => {
 
   return (
     <div className="navBar" expand="md">
-      <div>
-        <Link to="/" id="link" className="webName">
-          <h1 className="webNameH1">StayUpdated</h1>
-        </Link>
-      </div>
-      <div className="positions" navbar>
-        {!user ? (
-          <Redirect to="/login" />
-        ) : (
-          <>
-            <Category />
-            <div id="navItem1">
-              <Link to="/bookmark">
-                <img src={bookmark} className="App-logo" alt="logo" />
-              </Link>
-            </div>
+      <div className="navBarWidth">
+        <div>
+          <Link to="/" id="link" className="webName">
+            <h1 className="webNameH1">StayUpdated</h1>
+          </Link>
+        </div>
+        <div className="positions" navbar>
+          {!user ? (
+            <Redirect to="/login" />
+          ) : (
+            <>
+              <Category />
+              <div id="navItem1">
+                <Link to="/bookmark">
+                  <img src={bookmark} className="App-logo" alt="logo" />
+                </Link>
+              </div>
 
-            <Link to="/profile/" data-tip="Profile">
-              <img
-                src={userData.imageUrl}
-                className="App-logo-profile App-logo"
-                alt="logo"
-              />
-            </Link>
-            <div id="navItem3">
-              <GoogleLogout
-                clientId={Keys.Client_id}
-                buttonText="Logout"
-                onLogoutSuccess={handleLogoutSuccess}
-                onFailure={handleLogoutFailure}
-              />
-            </div>
-          </>
-        )}
+              <Link to="/profile/" data-tip="Profile">
+                <img
+                  src={userData.imageUrl}
+                  className="App-logo-profile App-logo"
+                  alt="logo"
+                />
+              </Link>
+              <div id="navItem3">
+                <GoogleLogout
+                  clientId={Keys.Client_id}
+                  buttonText="Logout"
+                  onLogoutSuccess={handleLogoutSuccess}
+                  onFailure={handleLogoutFailure}
+                />
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

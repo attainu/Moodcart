@@ -20,8 +20,11 @@ class HomePage extends Component {
     ) : (
       <>
         <Navbar />
-        <Select />
-        <Search />
+        <div className="selectSearch">
+          <Select />
+          <Search />
+        </div>
+
         <News news={this.props.news} />
       </>
       // <h1>Hello</h1>
