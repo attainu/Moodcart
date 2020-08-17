@@ -7,13 +7,28 @@ const limitDescription = (text, letterCount) => {
 };
 
 const ListNews = ({ snews, flippy, mode }) => {
-  // const text = snews.description;
-
   if (snews !== undefined) {
     return (
+      // <div className="flip-card">
+      //   <div className="flip-card-inner">
+      //     <div className="flip-card-front">
+      //       <img
+      //         src="img_avatar.png"
+      //         alt="Avatar"
+      //         style="width:300px;height:300px;"
+      //       />
+      //     </div>
+      //     <div class="flip-card-back">
+      //       <h1>John Doe</h1>
+      //       <p>Architect & Engineer</p>
+      //       <p>We love that guy</p>
+      //     </div>
+      //   </div>
+      // </div>
+
       <Flippy
         mode={mode}
-        className='flips'
+        className="flips"
         style={{
           textAlign: "left",
           width: "390px",
@@ -23,20 +38,20 @@ const ListNews = ({ snews, flippy, mode }) => {
           overflow: "hidden",
           position: "inherit",
           borderRadius: "10px",
-          // border: "0.01px solid white",
-        }}>
+        }}
+      >
         <FrontSide
-          className='frontFlip'
+          className="frontFlip"
           style={{
             background: "#4481eb",
-            // background: "red",
             color: "white",
             position: "relative",
             padding: "0px",
-          }}>
+          }}
+        >
           <img
             src={snews.image}
-            alt='img'
+            alt="img"
             style={{
               width: "100%",
               height: "220px",
@@ -49,18 +64,20 @@ const ListNews = ({ snews, flippy, mode }) => {
             <p>{snews.description.slice(0, 125)}...</p>
             <button
               flipOnClick={true}
-              flipDirection='horizontal'
-              ref={(r) => (flippy = r)}>
+              flipDirection="horizontal"
+              ref={(r) => (flippy = r)}
+            >
               Read more
             </button>
           </div>
         </FrontSide>
         <BackSide
-          className='backFlip'
+          className="backFlip"
           style={{
             color: "white",
             background: "#4481eb",
-          }}>
+          }}
+        >
           <p>{snews.summarization}</p>
         </BackSide>
       </Flippy>
