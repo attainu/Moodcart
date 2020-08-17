@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchNewsByCountry } from "../Redux/actions/newsAction";
-import SearchedNews from "../Components/searchedNews";
+import CountryNews from "../Components/CountryNews";
 import Navbar from "../Components/Navbar";
 import Search from "../Components/Search";
 import PuffLoader from "react-spinners/PuffLoader";
 import { css } from "@emotion/core";
+import Select from "../Components/Select";
 import "../App.css";
 
 const override = css`
@@ -33,8 +34,11 @@ class countryPage extends Component {
       return (
         <>
           <Navbar />
-          <Search />
-          <div className='sweet-loading'>
+          <div className="countrySelect">
+            <Select />
+            <Search />
+          </div>
+          <div className="sweet-loading">
             <PuffLoader
               css={override}
               size={150}
@@ -48,8 +52,11 @@ class countryPage extends Component {
       return (
         <>
           <Navbar />
-          <Search />
-          <SearchedNews news={this.props.news} mode='contry' />{" "}
+          <div className="countrySelectForm">
+            <Select />
+            <Search />
+          </div>
+          <CountryNews news={this.props.news} mode="contry" />{" "}
         </>
       );
     }

@@ -12,13 +12,13 @@ const ListSearchedNews = ({ snews, mode }) => {
   } else {
     console.log(snews);
     return (
-      <div className='searchCard'>
+      <div className="searchCard">
         <img
-          className='imgBox'
+          className="imgBox"
           src={snews.hasOwnProperty("image") ? snews.image.contentUrl : News}
-          alt='newsPhoto'
+          alt="newsPhoto"
         />
-        <h3>{snews.name}</h3>
+        <h3 style={{ color: "black" }}>{snews.name}</h3>
       </div>
     );
   }

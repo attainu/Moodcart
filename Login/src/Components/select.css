@@ -4,3 +4,12 @@
   margin-right: 50px;
   border-radius: 25px;
 }
+
+.countrySelectForm {
+  display: flex;
+  flex-direction: row;
+}
+
+.countrySelect {
+  height: 24px;
+}

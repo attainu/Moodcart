@@ -9,23 +9,6 @@ const limitDescription = (text, letterCount) => {
 const ListNews = ({ snews, flippy, mode }) => {
   if (snews !== undefined) {
     return (
-      // <div className="flip-card">
-      //   <div className="flip-card-inner">
-      //     <div className="flip-card-front">
-      //       <img
-      //         src="img_avatar.png"
-      //         alt="Avatar"
-      //         style="width:300px;height:300px;"
-      //       />
-      //     </div>
-      //     <div class="flip-card-back">
-      //       <h1>John Doe</h1>
-      //       <p>Architect & Engineer</p>
-      //       <p>We love that guy</p>
-      //     </div>
-      //   </div>
-      // </div>
-
       <Flippy
         mode={mode}
         className="flips"
@@ -49,19 +32,18 @@ const ListNews = ({ snews, flippy, mode }) => {
             padding: "0px",
           }}
         >
-          <img
-            src={snews.image}
-            alt="img"
-            style={{
-              width: "100%",
-              height: "220px",
-              background: "#4481eb",
-              color: "white",
-            }}
-          />
+          <div className="newsImageDiv">
+            <img className="newsImage" src={snews.image} alt="img" />
+          </div>
           <div style={{ margin: "5px" }}>
             <h3>{snews.title}</h3>
-            <p>{snews.description.slice(0, 125)}...</p>
+
+            <p>
+              {snews.description !== null
+                ? snews.description.slice(0, 130)
+                : ""}
+              ...
+            </p>
             <button
               flipOnClick={true}
               flipDirection="horizontal"

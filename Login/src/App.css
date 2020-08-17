@@ -7,6 +7,12 @@
   pointer-events: none;
 } */
 
+.countrySelectForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -23,6 +29,11 @@
 
 body {
   background: black;
+  /* background: linear-gradient(to right, #f12711, #f5af19); */
+  /* background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff); */
+  /* background: linear-gradient(to right, #093028, #237a57); */
+  /* background: linear-gradient(to right, #1488cc, #2b32b2); */
+  color: black;
 }
 
 body,

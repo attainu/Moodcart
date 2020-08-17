@@ -13,6 +13,7 @@ class category extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log("hi there");
     const { history } = this.props;
     history.push(`/category/${this.state.category}`);
   };
@@ -20,7 +21,7 @@ class category extends Component {
   render() {
     return (
       <form
-        className='buttonGroup'
+        className="buttonGroup"
         onSubmit={this.handleSubmit}
         style={{
           display: "flex",
@@ -28,40 +29,51 @@ class category extends Component {
           marginRight: "25px",
           marginBottom: "5px",
         }}
-        size='lg'>
+        size="lg"
+      >
         <button
-          size='lg'
-          value='Entertainment'
-          type='submit'
-          onClick={this.handleChange}>
+          style={{ background: "none" }}
+          size="lg"
+          value="Entertainment"
+          type="submit"
+          onClick={this.handleChange}
+        >
           Entertainment
         </button>
         <button
-          size='lg'
-          value='Politics'
-          type='submit'
-          onClick={this.handleChange}>
+          style={{ background: "none" }}
+          size="lg"
+          value="Politics"
+          type="submit"
+          onClick={this.handleChange}
+        >
           Politics
         </button>
         <button
-          size='lg'
-          value='Sports'
-          type='submit'
-          onClick={this.handleChange}>
+          style={{ background: "none" }}
+          size="lg"
+          value="Sports"
+          type="submit"
+          onClick={this.handleChange}
+        >
           Sports
         </button>
         <button
-          size='lg'
-          value='LifeStyle'
-          type='submit'
-          onClick={this.handleChange}>
+          style={{ background: "none" }}
+          size="lg"
+          value="LifeStyle"
+          type="submit"
+          onClick={this.handleChange}
+        >
           LifeStyle
         </button>
         <button
-          size='lg'
-          value='Business'
-          type='submit'
-          onClick={this.handleChange}>
+          style={{ background: "none" }}
+          size="lg"
+          value="Business"
+          type="submit"
+          onClick={this.handleChange}
+        >
           Business
         </button>
       </form>

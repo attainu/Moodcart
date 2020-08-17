@@ -35,7 +35,14 @@ NavBar {
 .navBar {
   background-color: #4481eb;
   height: 80px;
-  padding: 10px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBarWidth {
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
