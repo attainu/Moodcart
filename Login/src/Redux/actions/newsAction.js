@@ -76,3 +76,27 @@ export const fetchCategoryWiseNews = (category) => async (dispatch) => {
     dispatch({ type: TOGGLE_NEWS_FETCHING_STATE });
   }
 };
+
+export const fetchNewsByCountry = (country) => async (dispatch) => {
+  try {
+    dispatch({ type: GET_NEWS, payload: null });
+    dispatch({ type: TOGGLE_NEWS_FETCHING_STATE });
+    const response = await axios(
+      `https://news67.p.rapidapi.com/top/about-country?country=${country}&limit=25&skip=0&langs=en`,
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "news67.p.rapidapi.com",
+          "x-rapidapi-key":
+            "230ca193demshd733f162a356309p16d1bfjsnc21b0f9ae330",
+        },
+      }
+    );
+    // console.log(response.data);
+    dispatch({ type: GET_NEWS, payload: response.data });
+  } catch (error) {
+    console.error("error");
+  } finally {
+    dispatch({ type: TOGGLE_NEWS_FETCHING_STATE });
+  }
+};

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { CardDeck } from "reactstrap";
-import ListSearchedNews from "./ListCategoryNews";
+import ListCategoryNews from "./ListCategoryNews";
 import { css } from "@emotion/core";
 import PuffLoader from "react-spinners/PuffLoader";
-
+import "./CategoryNews.css";
 const override = css`
   display: block;
   margin: 0 auto;
@@ -14,21 +14,15 @@ const CategoryNews = ({ news, mode = "category" }) => {
   console.log(news.value);
   if (news) {
     return (
-      <CardDeck
-        style={{
-          marginLeft: "60px",
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-Around",
-        }}>
+      <CardDeck className="cardDeck">
         {news.value.map((news) => (
-          <ListSearchedNews key={news.name} snews={news} mode={mode} />
+          <ListCategoryNews key={news.name} snews={news} mode={mode} />
         ))}
       </CardDeck>
     );
   } else {
     return (
-      <div className='sweet-loading'>
+      <div className="sweet-loading">
         <PuffLoader
           css={override}
           size={150}

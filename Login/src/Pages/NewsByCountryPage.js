@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchSearchedNews } from "../Redux/actions/newsAction";
+import { fetchNewsByCountry } from "../Redux/actions/newsAction";
 import SearchedNews from "../Components/searchedNews";
 import Navbar from "../Components/Navbar";
 import Search from "../Components/Search";
@@ -14,28 +14,27 @@ const override = css`
   border-color: red;
 `;
 
-class SearchPage extends Component {
+class countryPage extends Component {
   componentDidMount() {
-    const searchQuery = this.props.match.params.searchQuery;
+    const country = this.props.match.params.country;
     console.log("I am getting mounted");
-    this.props.fetchSearchedNews(searchQuery);
+    this.props.fetchNewsByCountry(country);
   }
 
   componentDidUpdate(prevProps) {
-    const prevSearchQuery = prevProps.match.params.searchQuery;
-    const newSearchQuery = this.props.match.params.searchQuery;
-    if (prevSearchQuery !== newSearchQuery) {
-      this.props.fetchSearchedNews(newSearchQuery);
+    const prevCountry = prevProps.match.params.country;
+    const newCountry = this.props.match.params.country;
+    if (prevCountry !== newCountry) {
+      this.props.fetchNewsByCountry(newCountry);
     }
   }
   render() {
-    // console.log(this.props.news);
     if (!this.props.news) {
       return (
-        <div className="searchPage">
+        <>
           <Navbar />
           <Search />
-          <div className="sweet-loading">
+          <div className='sweet-loading'>
             <PuffLoader
               css={override}
               size={150}
@@ -43,15 +42,15 @@ class SearchPage extends Component {
               loading={true}
             />
           </div>
-        </div>
+        </>
       );
     } else {
       return (
-        <div className="searchPage">
+        <>
           <Navbar />
           <Search />
-          <SearchedNews news={this.props.news} mode="search" />{" "}
-        </div>
+          <SearchedNews news={this.props.news} mode='contry' />{" "}
+        </>
       );
     }
   }
@@ -63,4 +62,4 @@ const mapStateToProps = (storeState) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchSearchedNews })(SearchPage);
+export default connect(mapStateToProps, { fetchNewsByCountry })(countryPage);

@@ -20,7 +20,6 @@ const SearchedNews = ({ news, mode = "search" }) => {
           justifyContent: "center",
           display: "flex",
           flexWrap: "wrap",
-          // justifyContent: "space-Around",
         }}
       >
         {news.map((news) => (

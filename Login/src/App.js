@@ -5,7 +5,8 @@ import Container from "./Pages/LoginPage/Container/Container";
 import { Route, Redirect, Switch } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import ProfilePage from "./Pages/profilePage";
-import BookmarkPage from "./Pages/BookmarkPage/bookmark.js";
+import BookmarkPage from "./Pages/BookmarkPage/bookmark";
+import CountryNewsPage from "./Pages/NewsByCountryPage";
 import SearchPage from "./Pages/SearchPage";
 import CategoryPage from "./Pages/CategoryPage";
 
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/bookmark' component={BookmarkPage} />
         <Route exact path='/Search/:searchQuery' component={SearchPage} />
         <Route exact path='/category/:category' component={CategoryPage} />
+        <Route exact path='/country/:country' component={CountryNewsPage} />
         <Redirect to='/home' />
       </Switch>
     </div>

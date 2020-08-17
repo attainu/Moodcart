@@ -1,9 +1,21 @@
 import React, { Component } from "react";
+import { News } from "./news.jpg";
+import "./ListCategoryNews.css";
 
 const ListCategoryNews = ({ snews, mode }) => {
+  console.log(snews);
   return (
-    <div>
-      <h6 style={{ color: "white" }}>{snews.name}</h6>
+    <div className="categoryCard">
+      <img
+        className="imgBox"
+        src={
+          snews.hasOwnProperty("image")
+            ? snews.image.thumbnail.contentUrl
+            : News
+        }
+        alt="newsPhoto"
+      />
+      <h3>{snews.name}</h3>
     </div>
   );
 };

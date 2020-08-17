@@ -1,13 +1,21 @@
 import React from "react";
 import Search from "../Components/Search";
 import Navbar from "../Components/Navbar";
-const profilePage = () => {
+import { connect } from "react-redux";
+
+const profilePage = ({ user }) => {
   return (
     <div>
       <Navbar />
-      <h1>This is profile Page</h1>
+      <h1 style={{ color: "white" }}>{user.name}</h1>
     </div>
   );
 };
 
-export default profilePage;
+const mapStateToProps = (storeState) => {
+  return {
+    user: storeState.userState.user,
+  };
+};
+
+export default connect(mapStateToProps)(profilePage);

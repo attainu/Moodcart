@@ -21,7 +21,6 @@ class category extends Component {
     return (
       <form
         className='buttonGroup'
-        // onChange={this.handleChange}
         onSubmit={this.handleSubmit}
         style={{
           display: "flex",
