@@ -31,7 +31,7 @@ class countryPage extends Component {
     }
   }
   render() {
-    if (!this.props.news) {
+    if (!this.props.countryNews) {
       return (
         <>
           <Navbar />
@@ -57,16 +57,16 @@ class countryPage extends Component {
             <Select />
             <Search />
           </div>
-          <CountryNews news={this.props.news} mode="contry" /> <Footer />
+          <CountryNews countryNews={this.props.countryNews} mode="country" />{" "}
         </>
       );
     }
   }
 }
 const mapStateToProps = (storeState) => {
-  console.log(storeState.newsState.news);
+  console.log(storeState.countryNewsState.countryNews);
   return {
-    news: storeState.newsState.news,
+    countryNews: storeState.countryNewsState.countryNews,
   };
 };
 

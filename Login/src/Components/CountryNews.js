@@ -10,9 +10,9 @@ const override = css`
   border-color: red;
 `;
 
-const SearchedNews = ({ news, mode = "country" }) => {
-  console.log("data", news.value);
-  if (news) {
+const SearchedNews = ({ countryNews, mode = "country" }) => {
+  console.log(countryNews);
+  if (countryNews) {
     return (
       <CardDeck
         style={{
@@ -21,8 +21,12 @@ const SearchedNews = ({ news, mode = "country" }) => {
           flexWrap: "wrap",
         }}
       >
-        {news.map((news) => (
-          <ListCountryNews key={news.id} snews={news} mode={mode} />
+        {countryNews.map((countryNews) => (
+          <ListCountryNews
+            key={countryNews.id}
+            snews={countryNews}
+            mode={mode}
+          />
         ))}
       </CardDeck>
     );

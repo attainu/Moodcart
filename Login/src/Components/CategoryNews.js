@@ -10,19 +10,23 @@ const override = css`
   border-color: red;
 `;
 
-const CategoryNews = ({ news, mode = "category" }) => {
-  console.log(news.value);
-  if (news) {
+const CategoryNews = ({ categoryNews, mode = "category" }) => {
+  console.log(categoryNews.value);
+  if (categoryNews) {
     return (
-      <CardDeck className="cardDeck">
-        {news.value.map((news) => (
-          <ListCategoryNews key={news.name} snews={news} mode={mode} />
+      <CardDeck className='cardDeck'>
+        {categoryNews.value.map((categoryNews) => (
+          <ListCategoryNews
+            key={categoryNews.name}
+            snews={categoryNews}
+            mode={mode}
+          />
         ))}
       </CardDeck>
     );
   } else {
     return (
-      <div className="sweet-loading">
+      <div className='sweet-loading'>
         <PuffLoader
           css={override}
           size={150}
