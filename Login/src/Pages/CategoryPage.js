@@ -7,6 +7,7 @@ import Search from "../Components/Search";
 import { Redirect } from "react-router-dom";
 import PuffLoader from "react-spinners/PuffLoader";
 import { css } from "@emotion/core";
+import Footer from "../Components/Footer";
 
 const override = css`
   display: block;
@@ -34,7 +35,7 @@ class CategoryPage extends Component {
         <>
           <Navbar />
           <Search />
-          <div className='sweet-loading'>
+          <div className="sweet-loading">
             <PuffLoader
               css={override}
               size={150}
@@ -51,7 +52,7 @@ class CategoryPage extends Component {
           <Search />
           <CategoryNews
             categoryNews={this.props.categoryNews}
-            mode='category'
+            mode="category"
           />{" "}
         </>
       );

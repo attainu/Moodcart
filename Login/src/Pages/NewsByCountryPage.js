@@ -8,6 +8,7 @@ import PuffLoader from "react-spinners/PuffLoader";
 import { css } from "@emotion/core";
 import Select from "../Components/Select";
 import "../App.css";
+import Footer from "../Components/Footer";
 
 const override = css`
   display: block;
@@ -34,11 +35,11 @@ class countryPage extends Component {
       return (
         <>
           <Navbar />
-          <div className='countrySelect'>
+          <div className="countrySelect">
             <Select />
             <Search />
           </div>
-          <div className='sweet-loading'>
+          <div className="sweet-loading">
             <PuffLoader
               css={override}
               size={150}
@@ -52,11 +53,11 @@ class countryPage extends Component {
       return (
         <>
           <Navbar />
-          <div className='countrySelectForm'>
+          <div className="countrySelectForm">
             <Select />
             <Search />
           </div>
-          <CountryNews countryNews={this.props.countryNews} mode='country' />{" "}
+          <CountryNews countryNews={this.props.countryNews} mode="country" />{" "}
         </>
       );
     }

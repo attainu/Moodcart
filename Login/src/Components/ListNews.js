@@ -8,7 +8,7 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
     return (
       <Flippy
         mode={mode}
-        className='flips'
+        className="flips"
         style={{
           textAlign: "left",
           width: "390px",
@@ -20,17 +20,19 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
           borderRadius: "10px",
         }}
         ref={(r) => (restprops.flippyHorizontal = r)}
-        flipOnClick={false}>
+        flipOnClick={false}
+      >
         <FrontSide
-          className='frontFlip'
+          className="frontFlip"
           style={{
             background: "#4481eb",
             color: "white",
             position: "relative",
             padding: "0px",
-          }}>
-          <div className='newsImageDiv'>
-            <img className='newsImage' src={snews.image} alt='img' />
+          }}
+        >
+          <div className="newsImageDiv">
+            <img className="newsImage" src={snews.image} alt="img" />
           </div>
           <div style={{ margin: "5px" }}>
             <h3>{snews.title.slice(0, 80)}...</h3>
@@ -41,22 +43,25 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
               ...
             </p>
             <button
-              type='button'
-              onClick={() => restprops.flippyHorizontal.toggle()}>
+              type="button"
+              onClick={() => restprops.flippyHorizontal.toggle()}
+            >
               Read more
             </button>
           </div>
         </FrontSide>
         <BackSide
-          className='backFlip'
+          className="backFlip"
           style={{
             color: "white",
             background: "#4481eb",
-          }}>
+          }}
+        >
           <p>{snews.summarization}</p>
           <button
-            type='button'
-            onClick={() => restprops.flippyHorizontal.toggle()}>
+            type="button"
+            onClick={() => restprops.flippyHorizontal.toggle()}
+          >
             Go back
           </button>
         </BackSide>

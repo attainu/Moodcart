@@ -3,7 +3,7 @@ import { News } from "./news.jpg";
 import "./ListCategoryNews.css";
 
 const ListCategoryNews = ({ snews, mode }) => {
-  console.log(snews);
+  // console.log(snews);
   return (
     <div className='categoryCard'>
       <img

@@ -5,9 +5,9 @@ import { fetchTrendingNews } from "../Redux/actions/newsAction";
 import { News } from "../Components/news";
 import Navbar from "../Components/Navbar";
 import Search from "../Components/Search";
+import Footer from "../Components/Footer";
 import Select from "../Components/Select";
 import "./home.css";
-import Category from "../Components/category";
 
 class HomePage extends Component {
   componentDidMount() {
@@ -26,8 +26,8 @@ class HomePage extends Component {
         </div>
 
         <News news={this.props.news} />
+        <Footer />
       </>
-      // <h1>Hello</h1>
     );
   }
 }

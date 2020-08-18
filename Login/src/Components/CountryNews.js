@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import ListNews from "./ListNews";
 import { CardDeck } from "reactstrap";
 import ListCountryNews from "./ListCountryNews";
 import { css } from "@emotion/core";
@@ -20,7 +19,8 @@ const SearchedNews = ({ countryNews, mode = "country" }) => {
           justifyContent: "center",
           display: "flex",
           flexWrap: "wrap",
-        }}>
+        }}
+      >
         {countryNews.map((countryNews) => (
           <ListCountryNews
             key={countryNews.id}
@@ -32,7 +32,7 @@ const SearchedNews = ({ countryNews, mode = "country" }) => {
     );
   } else {
     return (
-      <div className='sweet-loading'>
+      <div className="sweet-loading">
         <PuffLoader
           css={override}
           size={150}
