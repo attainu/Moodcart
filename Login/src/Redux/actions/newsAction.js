@@ -1,4 +1,9 @@
-import { GET_NEWS, TOGGLE_NEWS_FETCHING_STATE } from "../actionTypes";
+import {
+  GET_NEWS,
+  TOGGLE_NEWS_FETCHING_STATE,
+  GET_NEWS_BY_CATEGORY,
+  GET_NEWS_BY_COUNTRY,
+} from "../actionTypes";
 import axios from "axios";
 
 export const fetchTrendingNews = () => async (dispatch) => {
@@ -6,7 +11,7 @@ export const fetchTrendingNews = () => async (dispatch) => {
     dispatch({ type: GET_NEWS, payload: null });
     dispatch({ type: TOGGLE_NEWS_FETCHING_STATE });
     const response = await axios(
-      "https://news67.p.rapidapi.com/trending?limit=25&skip=20&langs=en",
+      "https://news67.p.rapidapi.com/trending?limit=25&skip=0&langs=en",
       {
         method: "GET",
         headers: {
@@ -54,7 +59,7 @@ export const fetchSearchedNews = (searchQuery) => async (dispatch) => {
 export const fetchCategoryWiseNews = (category) => async (dispatch) => {
   console.log(category);
   try {
-    dispatch({ type: GET_NEWS, payload: null });
+    dispatch({ type: GET_NEWS_BY_CATEGORY, payload: null });
     dispatch({ type: TOGGLE_NEWS_FETCHING_STATE });
     const response = await axios(
       `https://bing-news-search1.p.rapidapi.com/news?textDecorations=true&count=30&cc=in&safeSearch=Off&category=${category}&textFormat=Raw`,
@@ -69,7 +74,7 @@ export const fetchCategoryWiseNews = (category) => async (dispatch) => {
       }
     );
     console.log(response.data);
-    dispatch({ type: GET_NEWS, payload: response.data });
+    dispatch({ type: GET_NEWS_BY_CATEGORY, payload: response.data });
   } catch (error) {
     console.error("error");
   } finally {
@@ -79,7 +84,7 @@ export const fetchCategoryWiseNews = (category) => async (dispatch) => {
 
 export const fetchNewsByCountry = (country) => async (dispatch) => {
   try {
-    dispatch({ type: GET_NEWS, payload: null });
+    dispatch({ type: GET_NEWS_BY_COUNTRY, payload: null });
     dispatch({ type: TOGGLE_NEWS_FETCHING_STATE });
     const response = await axios(
       `https://news67.p.rapidapi.com/top/about-country?country=${country}&limit=25&skip=0&langs=en`,
@@ -93,7 +98,7 @@ export const fetchNewsByCountry = (country) => async (dispatch) => {
       }
     );
     console.log(response.data);
-    dispatch({ type: GET_NEWS, payload: response.data });
+    dispatch({ type: GET_NEWS_BY_COUNTRY, payload: response.data });
   } catch (error) {
     console.error("error");
   } finally {

@@ -1,5 +1,6 @@
 import React from "react";
 import Flippy, { FrontSide, BackSide } from "./FlipCard";
+import { Link } from "react-router-dom";
 import "./ListNews.css";
 
 const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
@@ -33,7 +34,12 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
           </div>
           <div style={{ margin: "5px" }}>
             <h3>{snews.title.slice(0, 80)}...</h3>
-            <p>{snews.description.slice(0, 110)}...</p>
+            <p>
+              {snews.description !== null
+                ? snews.description.slice(0, 110)
+                : ""}
+              ...
+            </p>
             <button
               type='button'
               onClick={() => restprops.flippyHorizontal.toggle()}>

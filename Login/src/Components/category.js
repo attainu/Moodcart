@@ -12,7 +12,7 @@ class category extends Component {
   };
 
   handleSubmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     console.log("hi there");
     const { history } = this.props;
     history.push(`/category/${this.state.category}`);

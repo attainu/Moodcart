@@ -29,7 +29,7 @@ class CategoryPage extends Component {
     }
   }
   render() {
-    if (!this.props.news) {
+    if (!this.props.categoryNews) {
       return (
         <>
           <Navbar />
@@ -49,16 +49,19 @@ class CategoryPage extends Component {
         <>
           <Navbar />
           <Search />
-          <CategoryNews news={this.props.news} mode='category' />{" "}
+          <CategoryNews
+            categoryNews={this.props.categoryNews}
+            mode='category'
+          />{" "}
         </>
       );
     }
   }
 }
 const mapStateToProps = (storeState) => {
-  console.log(storeState.newsState.news);
+  console.log(storeState.categoryNewsState.categoryNews);
   return {
-    news: storeState.newsState.news,
+    categoryNews: storeState.categoryNewsState.categoryNews,
   };
 };
 

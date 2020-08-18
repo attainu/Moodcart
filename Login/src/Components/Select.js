@@ -28,11 +28,12 @@ class Select extends Component {
           className='countrySelect'
           value={this.state.value}
           onChange={this.handleChange}>
-          <option value='Aus'>Australia</option>
+          <option selected='true'>select country</option>
+          <option value='au'>Australia</option>
           <option value='in'>India</option>
           <option value='us'>America</option>
-          <option value='jap'>Japan</option>
-          <option value='italy'>Italy</option>
+          <option value='jp'>Japan</option>
+          <option value='it'>Italy</option>
         </select>
 
         <input type='submit' value='Submit' />

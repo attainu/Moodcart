@@ -7,6 +7,7 @@ import HomePage from "./Pages/HomePage";
 import ProfilePage from "./Pages/profilePage";
 import BookmarkPage from "./Pages/BookmarkPage/bookmark";
 import CountryNewsPage from "./Pages/NewsByCountryPage";
+import OneNewsPage from "./Pages/OneNewsPage";
 import SearchPage from "./Pages/SearchPage";
 import CategoryPage from "./Pages/CategoryPage";
 
@@ -25,6 +26,7 @@ function App() {
         <Route exact path='/Search/:searchQuery' component={SearchPage} />
         <Route exact path='/category/:category' component={CategoryPage} />
         <Route exact path='/country/:country' component={CountryNewsPage} />
+        <Route exact path='/snews/:snewsid' component={OneNewsPage} />
         <Redirect to='/home' />
       </Switch>
     </div>
