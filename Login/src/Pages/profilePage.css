@@ -8,24 +8,22 @@
 .profileContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 80vh;
+  height: calc(100vh - 200px);
 }
 
 .profileCard {
-  margin-top: 40px;
-  width: 600px;
-  height: 400px;
-  border: 1px solid white;
-  box-shadow: 5px 5px 5px;
   border-radius: 10px;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   background: rgb(9, 36, 109);
+  padding: 70px 25px;
 }
 
 .userImage {
-  margin-top: 70px;
   width: 150px;
+  margin-bottom: 30px;
 }
