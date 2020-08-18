@@ -23,20 +23,19 @@ class Select extends Component {
   };
   render() {
     return (
-      <form className="countrySelectForm" onSubmit={this.handleSubmit}>
+      <form className='countrySelectForm' onSubmit={this.handleSubmit}>
         <select
-          className="countrySelect"
+          className='countrySelect'
           value={this.state.value}
-          onChange={this.handleChange}
-        >
-          <option value="Aus">Australia</option>
-          <option value="in">India</option>
-          <option value="us">America</option>
-          <option value="jap">Japan</option>
-          <option value="italy">Italy</option>
+          onChange={this.handleChange}>
+          <option value='Aus'>Australia</option>
+          <option value='in'>India</option>
+          <option value='us'>America</option>
+          <option value='jap'>Japan</option>
+          <option value='italy'>Italy</option>
         </select>
 
-        <input type="submit" value="Submit" />
+        <input type='submit' value='Submit' />
       </form>
     );
   }

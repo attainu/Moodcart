@@ -9,7 +9,7 @@ import BookmarkPage from "./Pages/BookmarkPage/BookMark";
 import CountryNewsPage from "./Pages/NewsByCountryPage";
 import SearchPage from "./Pages/SearchPage";
 import CategoryPage from "./Pages/CategoryPage";
-import Footer from "./Components/Footer";
+// import Footer from "./Components/Footer";
 
 function App() {
   return (

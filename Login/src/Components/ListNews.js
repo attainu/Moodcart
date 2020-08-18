@@ -1,12 +1,8 @@
 import React from "react";
-import Flippy, { FrontSide, BackSide } from "react-flippy";
+import Flippy, { FrontSide, BackSide } from "./FlipCard";
 import "./ListNews.css";
 
-const limitDescription = (text, letterCount) => {
-  return text.length <= letterCount ? text : `${text.slice(0, letterCount)}...`;
-};
-
-const ListNews = ({ snews, flippy, mode }) => {
+const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
   if (snews !== undefined) {
     return (
       <Flippy
@@ -22,6 +18,8 @@ const ListNews = ({ snews, flippy, mode }) => {
           position: "inherit",
           borderRadius: "10px",
         }}
+        ref={(r) => (restprops.flippyHorizontal = r)}
+        flipOnClick={false}
       >
         <FrontSide
           className="frontFlip"
@@ -57,6 +55,12 @@ const ListNews = ({ snews, flippy, mode }) => {
           }}
         >
           <p>{snews.summarization}</p>
+          <button
+            type="button"
+            onClick={() => restprops.flippyHorizontal.toggle()}
+          >
+            Go back
+          </button>
         </BackSide>
       </Flippy>
     );
