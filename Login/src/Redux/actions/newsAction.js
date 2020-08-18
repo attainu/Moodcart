@@ -16,7 +16,6 @@ export const fetchTrendingNews = () => async (dispatch) => {
         },
       }
     );
-    // console.log(response.data);
     dispatch({ type: GET_NEWS, payload: response.data });
   } catch (error) {
     console.error("error");

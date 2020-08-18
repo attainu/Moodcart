@@ -44,11 +44,7 @@ const ListNews = ({ snews, flippy, mode }) => {
                 : ""}
               ...
             </p>
-            <button
-              flipOnClick={true}
-              flipDirection="horizontal"
-              ref={(r) => (flippy = r)}
-            >
+            <button flipdirection="horizontal" ref={(r) => (flippy = r)}>
               Read more
             </button>
           </div>

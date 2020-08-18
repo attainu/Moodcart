@@ -13,12 +13,26 @@ const ListSearchedNews = ({ snews, mode }) => {
     console.log(snews);
     return (
       <div className="searchCard">
-        <img
-          className="imgBox"
-          src={snews.hasOwnProperty("image") ? snews.image.contentUrl : News}
-          alt="newsPhoto"
-        />
-        <h3 style={{ color: "black" }}>{snews.name}</h3>
+        <div className="searchImgDiv">
+          <div className="searchImgDiv2">
+            <img
+              className="imgBoxes"
+              src={
+                snews.hasOwnProperty("image") ? snews.image.contentUrl : News
+              }
+              alt="newsPhoto"
+            />
+          </div>
+        </div>
+        <div className="searchDetails">
+          <h2 className="searchData" style={{ color: "red" }}>
+            {snews.name}
+          </h2>
+
+          <h3 className="searchData" style={{ color: "blue" }}>
+            {snews.description}
+          </h3>
+        </div>
       </div>
     );
   }

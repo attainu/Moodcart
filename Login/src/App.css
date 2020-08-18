@@ -1,11 +1,6 @@
-/* .App {
-  text-align: center;
-} */
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
+.App {
+  height: 100%;
+}
 
 .countrySelectForm {
   display: flex;
@@ -29,21 +24,12 @@
 
 body {
   background: black;
-  /* background: linear-gradient(to right, #f12711, #f5af19); */
-  /* background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff); */
-  /* background: linear-gradient(to right, #093028, #237a57); */
-  /* background: linear-gradient(to right, #1488cc, #2b32b2); */
-  color: black;
 }
 
 body,
 input {
   font-family: "Poppins", sans-serif;
 }
-
-/* .searchPage {
-  background: wheat;
-} */
 
 .container {
   position: relative;
@@ -59,8 +45,7 @@ input {
   width: 2000px;
   height: 2000px;
   border-radius: 50%;
-  background: linear-gradient(-45deg, rgb(236, 83, 83), red);
-  /* background: linear-gradient(-45deg, #4481eb, #04befe); */
+  background: linear-gradient(-45deg, #4481eb, #04befe);
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
@@ -155,7 +140,6 @@ form.sign-up-form {
   outline: none;
   border-radius: 49px;
   cursor: pointer;
-  /* background-color: red; */
   background-color: #5995fd;
   color: #fff;
   text-transform: uppercase;
@@ -413,4 +397,17 @@ form.sign-up-form {
     bottom: 28%;
     left: 50%;
   }
+}
+
+.Footer {
+  background-color: #0f5bdf;
+  width: 100%;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0px;
+  margin-top: 20px;
 }

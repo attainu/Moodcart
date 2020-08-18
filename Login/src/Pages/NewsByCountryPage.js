@@ -8,6 +8,7 @@ import PuffLoader from "react-spinners/PuffLoader";
 import { css } from "@emotion/core";
 import Select from "../Components/Select";
 import "../App.css";
+import Footer from "../Components/Footer";
 
 const override = css`
   display: block;
@@ -56,7 +57,7 @@ class countryPage extends Component {
             <Select />
             <Search />
           </div>
-          <CountryNews news={this.props.news} mode="contry" />{" "}
+          <CountryNews news={this.props.news} mode="contry" /> <Footer />
         </>
       );
     }
