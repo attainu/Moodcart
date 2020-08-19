@@ -1,7 +1,7 @@
 import { TOGGLE_NEWS_FETCHING_STATE, GET_NEWS } from "../actionTypes";
 
 const initialState = {
-  news: null,
+  news: [],
   isNewsFetching: false,
 };
 

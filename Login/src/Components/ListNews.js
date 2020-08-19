@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./ListNews.css";
 
 const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
+  console.log(snews);
   if (snews !== undefined) {
     return (
       <Flippy
@@ -35,7 +36,7 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
             <img className="newsImage" src={snews.image} alt="img" />
           </div>
           <div style={{ margin: "5px" }}>
-            <h3>{snews.title}</h3>
+            <h3>{!snews.title ? "" : snews.title.slice(0, 80)}...</h3>
             <p>
               {snews.description !== null
                 ? snews.description.slice(0, 110)
