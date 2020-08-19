@@ -1,15 +1,14 @@
 import React from "react";
-import NavBar from "../../Components/Navbar";
+import Navbar from "../../Components/Navbar";
 import Search from "../../Components/Search";
 
-const BookMark = () => {
+const bookmark = () => {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <Search />
-      <div>here will be your saved articles</div>;
     </>
   );
 };
 
-export default BookMark;
+export default bookmark;

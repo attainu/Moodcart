@@ -1,0 +1,67 @@
+.searchCard {
+  width: 80%;
+  height: 273px;
+  background: white;
+  display: flex;
+  margin: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.searchDate {
+  margin-top: 10px;
+  font-weight: 400;
+  margin-top: 10px;
+  background: #0f5bdf;
+  width: 16%;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.searchTitle {
+  color: #0f5bdf;
+  padding-bottom: 14px;
+  line-height: 1.2;
+}
+
+.searchDesc {
+  color: #454546;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.imgBox {
+  width: 428px;
+  height: 273px;
+  overflow: hidden;
+}
+
+.searchDetails {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.searchImgDiv {
+  width: 428px;
+  height: 273px;
+}
+.searchImgDiv2 {
+  overflow: hidden;
+  width: 428px;
+  height: 273px;
+}
+
+.searchImgDiv img {
+  transition: all 0.6s ease;
+}
+
+.searchImgDiv:hover img {
+  transform: scale(1.3);
+}

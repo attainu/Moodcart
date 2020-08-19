@@ -1,31 +1,42 @@
 import React, { Component } from "react";
+import "./ListSearchNews.css";
+import News from "./news.jpg";
 
 const ListSearchedNews = ({ snews, mode }) => {
-  if (snews !== undefined) {
+  if (snews == undefined) {
     return (
       <>
-        <div class='card mb-3' style='max-width: 540px;' mode={mode}>
-          <div class='row no-gutters'>
-            <div class='col-md-4'>
-              <img src='...' class={snews.image.contentUrl} alt='...' />
-            </div>
-            <div class='col-md-8'>
-              <div class='card-body'>
-                <h5 class='card-title'>Title: {snews.name}</h5>
-                <p class='card-text'>Description: {snews.description}</p>
-                <p class='card-text'>
-                  <small class='text-muted'>
-                    datePublished on : {snews.datePublished}
-                  </small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h1>im here</h1>;
       </>
     );
   } else {
-    return <h1>Loading</h1>;
+    console.log(snews);
+    return (
+      <div className="searchCard">
+        <div className="searchImgDiv">
+          <div className="searchImgDiv2">
+            <img
+              className="imgBox"
+              src={
+                snews.hasOwnProperty("image") ? snews.image.contentUrl : News
+              }
+              alt="newsPhoto"
+            />
+          </div>
+        </div>
+        <div className="searchDetails">
+          <h5
+            className="searchDate"
+            style={{ marginTop: "10px", text: "muted" }}
+          >
+            {snews.datePublished.slice(0, 10)}
+          </h5>
+          <h2 className="searchTitle">{snews.name}</h2>
+
+          <h3 className="searchDesc">{snews.description}</h3>
+        </div>
+      </div>
+    );
   }
 };
 

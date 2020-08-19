@@ -1,7 +1,9 @@
-/* . { */
-/* padding: 10px;
-} */
-
 :not(NavBar) {
   padding: 0%;
+}
+
+.selectSearch {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

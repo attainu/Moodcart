@@ -1,16 +1,13 @@
 import React from "react";
-import Flippy, { FrontSide, BackSide } from "react-flippy";
+import Flippy, { FrontSide, BackSide } from "./FlipCard";
+import { Link } from "react-router-dom";
 import "./ListNews.css";
 
-const ListNews = ({ snews, flippy, mode }) => {
+const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
   if (snews !== undefined) {
     return (
       <Flippy
-        flipOnHover={false}
-        flipOnClick={true}
         mode={mode}
-        flipDirection="horizontal"
-        ref={(r) => (flippy = r)}
         className="flips"
         style={{
           textAlign: "left",
@@ -21,8 +18,9 @@ const ListNews = ({ snews, flippy, mode }) => {
           overflow: "hidden",
           position: "inherit",
           borderRadius: "10px",
-          // border: "0.01px solid white",
         }}
+        ref={(r) => (restprops.flippyHorizontal = r)}
+        flipOnClick={false}
       >
         <FrontSide
           className="frontFlip"
@@ -33,19 +31,23 @@ const ListNews = ({ snews, flippy, mode }) => {
             padding: "0px",
           }}
         >
-          <img
-            src={snews.image}
-            alt="img"
-            style={{
-              width: "100%",
-              height: "220px",
-              background: "#4481eb",
-              color: "white",
-            }}
-          />
+          <div className="newsImageDiv">
+            <img className="newsImage" src={snews.image} alt="img" />
+          </div>
           <div style={{ margin: "5px" }}>
-            <h2>{snews.title}</h2>
-            <p>{snews.description}</p>
+            <h3>{snews.title}</h3>
+            <p>
+              {snews.description !== null
+                ? snews.description.slice(0, 110)
+                : ""}
+              ...
+            </p>
+            <button
+              type="button"
+              onClick={() => restprops.flippyHorizontal.toggle()}
+            >
+              Read more
+            </button>
           </div>
         </FrontSide>
         <BackSide
@@ -56,6 +58,12 @@ const ListNews = ({ snews, flippy, mode }) => {
           }}
         >
           <p>{snews.summarization}</p>
+          <button
+            type="button"
+            onClick={() => restprops.flippyHorizontal.toggle()}
+          >
+            Go back
+          </button>
         </BackSide>
       </Flippy>
     );

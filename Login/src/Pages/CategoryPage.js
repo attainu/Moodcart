@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchSearchedNews } from "../Redux/actions/newsAction";
-import SearchedNews from "../Components/searchedNews";
+import { fetchCategoryWiseNews } from "../Redux/actions/newsAction";
+import CategoryNews from "../Components/CategoryNews";
 import Navbar from "../Components/Navbar";
 import Search from "../Components/Search";
+import { Redirect } from "react-router-dom";
 import PuffLoader from "react-spinners/PuffLoader";
 import { css } from "@emotion/core";
 import Footer from "../Components/Footer";
-import "../App.css";
 
 const override = css`
   display: block;
@@ -15,24 +15,24 @@ const override = css`
   border-color: red;
 `;
 
-class SearchPage extends Component {
+class CategoryPage extends Component {
   componentDidMount() {
-    const searchQuery = this.props.match.params.searchQuery;
+    const category = this.props.match.params.category;
     console.log("I am getting mounted");
-    this.props.fetchSearchedNews(searchQuery);
+    this.props.fetchCategoryWiseNews(category);
   }
 
   componentDidUpdate(prevProps) {
-    const prevSearchQuery = prevProps.match.params.searchQuery;
-    const newSearchQuery = this.props.match.params.searchQuery;
-    if (prevSearchQuery !== newSearchQuery) {
-      this.props.fetchSearchedNews(newSearchQuery);
+    const prevCategory = prevProps.match.params.category;
+    const newCategory = this.props.match.params.category;
+    if (prevCategory !== newCategory) {
+      this.props.fetchCategoryWiseNews(newCategory);
     }
   }
   render() {
-    if (!this.props.news) {
+    if (!this.props.categoryNews) {
       return (
-        <div className="searchPage">
+        <>
           <Navbar />
           <Search />
           <div className="sweet-loading">
@@ -43,24 +43,29 @@ class SearchPage extends Component {
               loading={true}
             />
           </div>
-        </div>
+        </>
       );
     } else {
       return (
-        <div className="searchPage">
+        <>
           <Navbar />
           <Search />
-          <SearchedNews news={this.props.news} mode="search" /> <Footer />
-        </div>
+          <CategoryNews
+            categoryNews={this.props.categoryNews}
+            mode="category"
+          />{" "}
+        </>
       );
     }
   }
 }
 const mapStateToProps = (storeState) => {
-  console.log(storeState.newsState.news);
+  console.log(storeState.categoryNewsState.categoryNews);
   return {
-    news: storeState.newsState.news,
+    categoryNews: storeState.categoryNewsState.categoryNews,
   };
 };
 
-export default connect(mapStateToProps, { fetchSearchedNews })(SearchPage);
+export default connect(mapStateToProps, { fetchCategoryWiseNews })(
+  CategoryPage
+);
