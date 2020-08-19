@@ -28,7 +28,6 @@ class category extends Component {
           display: "flex",
           flexDirection: "row",
           marginRight: "25px",
-          marginBottom: "5px",
         }}
         size="lg"
       >

@@ -29,7 +29,7 @@ const ListSearchedNews = ({ snews, mode }) => {
             className="searchDate"
             style={{ marginTop: "10px", text: "muted" }}
           >
-            {snews.datePublished.slice(0, 10)}
+            {!snews.datePublished ? "" : snews.datePublished.slice(0, 10)}
           </h5>
           <h2 className="searchTitle">{snews.name}</h2>
 

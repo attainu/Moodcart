@@ -32,31 +32,35 @@ const SuNavbar = ({ user, logOutUser }) => {
   };
 
   return (
-    <div className='navBar' expand='md'>
-      <div className='navBarWidth'>
+    <div className="navBar" expand="md">
+      <div className="navBarWidth">
         <div>
-          <Link to='/' id='link' className='webName'>
-            <h1 className='webNameH1'>StayUpdated</h1>
+          <Link to="/" id="link" className="webName">
+            <h1 className="webNameH1">StayUpdated</h1>
           </Link>
         </div>
-        <div className='positions' navbar>
+        <div className="positions" navbar>
           {!user ? (
-            <Redirect to='/login' />
+            <Redirect to="/login" />
           ) : (
             <>
               <Category />
 
-              <Link to='/profile/' data-tip='Profile'>
+              <Link
+                style={{ display: "flex" }}
+                to="/profile/"
+                data-tip="Profile"
+              >
                 <img
                   src={userData.imageUrl}
-                  className='App-logo-profile App-logo'
-                  alt='logo'
+                  className="App-logo-profile App-logo"
+                  alt="logo"
                 />
               </Link>
-              <div id='navItem3'>
+              <div id="navItem3">
                 <GoogleLogout
                   clientId={Keys.Client_id}
-                  buttonText='Logout'
+                  buttonText="Logout"
                   onLogoutSuccess={handleLogoutSuccess}
                   onFailure={handleLogoutFailure}
                 />
