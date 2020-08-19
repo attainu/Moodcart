@@ -8,8 +8,25 @@
 .countrySelectForm {
   display: flex;
   flex-direction: row;
+  position: relative;
+  left: -5%;
 }
 
 .countrySelect {
-  height: 24px;
+  height: 48px;
+  border-radius: 35px;
+  background: #5995fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align-last: center;
+}
+
+.inpSubCountry {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
+  height: 48px;
+  width: 70px;
 }

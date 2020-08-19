@@ -4,7 +4,7 @@ import "../App.css";
 const Footer = () => {
   return (
     <div className="Footer" style={{ color: "white" }}>
-      Hi I am Footer
+      © Copyright 2020 Stay-Updated | All rights reserved.
     </div>
   );
 };
