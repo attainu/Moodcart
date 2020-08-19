@@ -1,17 +1,16 @@
 .searchCard {
   width: 80%;
-  height: 300px;
+  height: 273px;
   background: white;
   display: flex;
-
   margin: 5px;
   border-radius: 5px;
   overflow: hidden;
 }
 
 .imgBoxes {
-  width: 520px;
-  height: 300px;
+  width: 428px;
+  height: 273px;
   overflow: hidden;
 }
 
@@ -23,13 +22,13 @@
 }
 
 .searchImgDiv {
-  width: 520px;
-  height: 300px;
+  width: 428px;
+  height: 273px;
 }
 .searchImgDiv2 {
   overflow: hidden;
-  width: 520px;
-  height: 300px;
+  width: 428px;
+  height: 273px;
 }
 
 .searchImgDiv img {

@@ -40,7 +40,7 @@ export const fetchSearchedNews = (searchQuery) => async (dispatch) => {
         headers: {
           "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
           "x-rapidapi-key":
-            "230ca193demshd733f162a356309p16d1bfjsnc21b0f9ae330",
+            "22e8b6d6d9msh5a34b44b020ddc4p198de5jsnfaf9e239bffa",
           "accept-language": "en",
           "x-bingapis-sdk": "true",
         },
@@ -67,7 +67,7 @@ export const fetchCategoryWiseNews = (category) => async (dispatch) => {
         headers: {
           "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
           "x-rapidapi-key":
-            "230ca193demshd733f162a356309p16d1bfjsnc21b0f9ae330",
+            "22e8b6d6d9msh5a34b44b020ddc4p198de5jsnfaf9e239bffa",
           "x-bingapis-sdk": "true",
         },
       }

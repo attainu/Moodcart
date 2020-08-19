@@ -29,11 +29,19 @@ class Select extends Component {
           value={this.state.value}
           onChange={this.handleChange}>
           <option selected='true'>select country</option>
+          <option value='af'>Afghanistan </option>
           <option value='au'>Australia</option>
           <option value='in'>India</option>
           <option value='us'>America</option>
           <option value='jp'>Japan</option>
-          <option value='it'>Italy</option>
+          <option value='bd'>Bangladesh</option>
+          <option value='br'>Brazil</option>
+          <option value='ca'>Canada</option>
+          <option value='cn'>China</option>
+          <option value='dk'>Denmark</option>
+          <option value='eg'>Egypt</option>
+          <option value='EE'>Estonia</option>
+          <option value='fr'>France</option>
         </select>
 
         <input type='submit' value='Submit' />
