@@ -31,9 +31,7 @@ class Select extends Component {
           <option selected='true'>select country</option>
           <option value='af'>Afghanistan </option>
           <option value='au'>Australia</option>
-          <option value='in'>India</option>
           <option value='us'>America</option>
-          <option value='jp'>Japan</option>
           <option value='bd'>Bangladesh</option>
           <option value='br'>Brazil</option>
           <option value='ca'>Canada</option>
@@ -42,6 +40,8 @@ class Select extends Component {
           <option value='eg'>Egypt</option>
           <option value='EE'>Estonia</option>
           <option value='fr'>France</option>
+          <option value='in'>India</option>
+          <option value='jp'>Japan</option>
         </select>
 
         <input type='submit' value='Submit' />
