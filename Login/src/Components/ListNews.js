@@ -36,13 +36,15 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
             <img className="newsImage" src={snews.image} alt="img" />
           </div>
           <div style={{ margin: "5px" }}>
-            <h3>{!snews.title ? "" : snews.title.slice(0, 80)}...</h3>
-            <p>
-              {snews.description !== null
-                ? snews.description.slice(0, 110)
-                : ""}
-              ...
-            </p>
+            <div>
+              <h3>{!snews.title ? "" : snews.title.slice(0, 80)}...</h3>
+              <p>
+                {snews.description !== null
+                  ? snews.description.slice(0, 110)
+                  : ""}
+                ...
+              </p>
+            </div>
             <button
               type="button"
               onClick={() => restprops.flippyHorizontal.toggle()}
