@@ -57,9 +57,11 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
             background: "#4481eb",
           }}>
           <p>
-            {snews.summarization.length > 550
-              ? snews.summarization.slice(0, 480)
-              : snews.summarization}
+            {snews.summarization
+              ? snews.summarization.length > 550
+                ? snews.summarization.slice(0, 480)
+                : snews.summarization
+              : " "}
           </p>
           <button
             type='button'
