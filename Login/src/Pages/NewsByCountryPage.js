@@ -35,7 +35,7 @@ class countryPage extends Component {
       return (
         <>
           <Navbar />
-          <div className="countrySelect">
+          <div className="countrySelectForm">
             <Select />
             <Search />
           </div>

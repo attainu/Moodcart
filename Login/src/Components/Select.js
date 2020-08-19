@@ -44,7 +44,7 @@ class Select extends Component {
           <option value='jp'>Japan</option>
         </select>
 
-        <input type='submit' value='Submit' />
+        <input className='inpSubCountry' type='submit' value='Submit' />
       </form>
     );
   }

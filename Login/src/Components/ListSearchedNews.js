@@ -16,7 +16,7 @@ const ListSearchedNews = ({ snews, mode }) => {
         <div className="searchImgDiv">
           <div className="searchImgDiv2">
             <img
-              className="imgBoxes"
+              className="imgBox"
               src={
                 snews.hasOwnProperty("image") ? snews.image.contentUrl : News
               }
@@ -25,13 +25,15 @@ const ListSearchedNews = ({ snews, mode }) => {
           </div>
         </div>
         <div className="searchDetails">
-          <h2 className="searchData" style={{ color: "red" }}>
-            {snews.name}
-          </h2>
+          <h5
+            className="searchDate"
+            style={{ marginTop: "10px", text: "muted" }}
+          >
+            {!snews.datePublished ? "" : snews.datePublished.slice(0, 10)}
+          </h5>
+          <h2 className="searchTitle">{snews.name}</h2>
 
-          <h3 className="searchData" style={{ color: "blue" }}>
-            {snews.description}
-          </h3>
+          <h3 className="searchDesc">{snews.description}</h3>
         </div>
       </div>
     );

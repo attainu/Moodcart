@@ -54,7 +54,11 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
             color: "white",
             background: "#4481eb",
           }}>
-          <p>{snews.summarization}</p>
+          <p>
+            {snews.summarization.length > 550
+              ? snews.summarization.slice(0, 480)
+              : snews.summarization}
+          </p>
           <button
             type='button'
             onClick={() => restprops.flippyHorizontal.toggle()}>
