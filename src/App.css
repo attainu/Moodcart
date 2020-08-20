@@ -417,3 +417,20 @@ form.sign-up-form {
   justify-content: center;
   align-items: center;
 }
+
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+  margin-right: 25px;
+}
+
+@media screen and (max-width: 1100px) {
+  .buttonGroup {
+    display: none;
+  }
+  .responsive {
+    display: absolute;
+    float: right;
+    background-color: yellow;
+  }
+}

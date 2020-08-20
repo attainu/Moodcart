@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import "./search.css";
+import "./Css/search.css";
 
 class Search extends Component {
   state = {
@@ -19,22 +19,21 @@ class Search extends Component {
   render() {
     return (
       <form
-        className="searchForm input-group mb-3"
-        onSubmit={this.handleSubmit}
-      >
+        className='searchForm input-group mb-3'
+        onSubmit={this.handleSubmit}>
         <input
-          type="text"
-          className="searchInput form-control"
-          placeholder="search topics"
-          name="searchQuery"
+          type='text'
+          className='searchInput form-control'
+          placeholder='search topics'
+          name='searchQuery'
           onChange={this.handleChange}
           value={this.state.searchQuery}
         />
         <input
-          className="btn btn-outline-secondary"
-          type="submit"
-          id="button-addon2"
-          value="Search"
+          className='btn btn-outline-secondary'
+          type='submit'
+          id='button-addon2'
+          value='Search'
         />
       </form>
     );

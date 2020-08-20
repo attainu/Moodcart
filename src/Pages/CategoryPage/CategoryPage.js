@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchCategoryWiseNews } from "../Redux/actions/newsAction";
-import CategoryNews from "../Components/CategoryNews";
-import Navbar from "../Components/Navbar";
-import Search from "../Components/Search";
-import { Redirect } from "react-router-dom";
+import { fetchCategoryWiseNews } from "../../Redux/actions/newsAction";
+import CategoryNews from "./../../Components/CategoryNews.jsx";
+import Navbar from "../../Components/Navbar.jsx";
+import Search from "../../Components/Search.jsx";
 import PuffLoader from "react-spinners/PuffLoader";
 import { css } from "@emotion/core";
-import Footer from "../Components/Footer";
+import Footer from "../../Components/Footer";
 
 const override = css`
   display: block;
@@ -35,7 +34,7 @@ class CategoryPage extends Component {
         <>
           <Navbar />
           <Search />
-          <div className="sweet-loading">
+          <div className='sweet-loading'>
             <PuffLoader
               css={override}
               size={150}
@@ -52,7 +51,7 @@ class CategoryPage extends Component {
           <Search />
           <CategoryNews
             categoryNews={this.props.categoryNews}
-            mode="category"
+            mode='category'
           />{" "}
         </>
       );

@@ -1,7 +1,7 @@
 import React from "react";
 import Flippy, { FrontSide, BackSide } from "./FlipCard";
 // import { Link } from "react-router-dom";
-import "./ListNews.css";
+import "./Css/ListNews.css";
 
 const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
   console.log(snews);

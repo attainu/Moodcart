@@ -3,7 +3,7 @@ import { CardDeck } from "reactstrap";
 import ListCategoryNews from "./ListCategoryNews";
 import { css } from "@emotion/core";
 import PuffLoader from "react-spinners/PuffLoader";
-import "./CategoryNews.css";
+import "./Css/CategoryNews.css";
 import Footer from "./Footer";
 const override = css`
   display: block;
@@ -16,7 +16,7 @@ const CategoryNews = ({ categoryNews, mode = "category" }) => {
   if (categoryNews) {
     return (
       <>
-        <CardDeck className="cardDeck">
+        <CardDeck className='cardDeck'>
           {categoryNews.value.map((categoryNews) => (
             <ListCategoryNews
               key={categoryNews.name}
@@ -31,7 +31,7 @@ const CategoryNews = ({ categoryNews, mode = "category" }) => {
   } else {
     return (
       <>
-        <div className="sweet-loading">
+        <div className='sweet-loading'>
           <PuffLoader
             css={override}
             size={150}

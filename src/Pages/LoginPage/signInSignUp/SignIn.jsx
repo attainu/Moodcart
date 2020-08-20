@@ -67,7 +67,7 @@ const SignIn = ({ user, setUser }) => {
           clientId={}
           onSuccess={responseGoogle}
           onFailure={responseGoogle}></GoogleLogin> */}
-        <a href='#' className='social-icon'>
+        <a href='#' className='social-icon' style={{ cursor: "not-allowed" }}>
           <i className='fab fa-linkedin-in'></i>
         </a>
       </div>
