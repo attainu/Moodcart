@@ -16,7 +16,7 @@ const CategoryNews = ({ categoryNews, mode = "category" }) => {
   if (categoryNews) {
     return (
       <>
-        <CardDeck className='cardDeck'>
+        <div className="cardDeck">
           {categoryNews.value.map((categoryNews) => (
             <ListCategoryNews
               key={categoryNews.name}
@@ -24,14 +24,14 @@ const CategoryNews = ({ categoryNews, mode = "category" }) => {
               mode={mode}
             />
           ))}
-        </CardDeck>
+        </div>
         <Footer />
       </>
     );
   } else {
     return (
       <>
-        <div className='sweet-loading'>
+        <div className="sweet-loading">
           <PuffLoader
             css={override}
             size={150}

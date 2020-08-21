@@ -2,10 +2,23 @@
   height: 100%;
 }
 
-.countrySelectForm {
+.cate {
+  background: none;
+}
+
+.selectSearch {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+@media (max-width: 585px) {
+  .selectSearch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

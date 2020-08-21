@@ -17,7 +17,6 @@ export const News = ({ news, mode = "trending", ...restprops }) => {
     return (
       <CardDeck
         style={{
-          marginLeft: "60px",
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",

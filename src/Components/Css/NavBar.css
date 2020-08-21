@@ -66,8 +66,10 @@ NavbarBrand {
   color: white;
 }
 
-.navItem {
-  margin: 8px 10px 0px 0px;
+#navItem3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-item2 {
@@ -77,6 +79,8 @@ NavbarBrand {
 .logedin {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
@@ -92,7 +96,6 @@ h1 {
 .App-logo-profile {
   border-radius: 20px;
   height: 07vmin;
-  pointer-events: none;
   border-radius: 50%;
 }
 
@@ -118,18 +121,22 @@ h1 {
   }
 }
 
-@media screen and (max-width: 1100px) {
+/* @media screen and (max-width: 1100px) {
   .logedin {
   }
-}
+} */
 
 @media screen and (max-width: 1100px) {
-  .topnav a:not(:first-child) {
+  /* .topnav a:not(:first-child) {
     display: none;
-  }
+  } */
   .topnav a.icon {
     float: right;
     display: block;
+  }
+
+  .iconTitle {
+    display: flex;
   }
 }
 

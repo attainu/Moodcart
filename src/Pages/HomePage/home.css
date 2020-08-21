@@ -7,3 +7,12 @@
   flex-direction: row;
   justify-content: center;
 }
+
+@media (max-width: 585px) {
+  .selectSearch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+  }
+}

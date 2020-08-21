@@ -23,28 +23,29 @@ class Select extends Component {
   };
   render() {
     return (
-      <form className='countrySelectForm' onSubmit={this.handleSubmit}>
+      <form className="countrySelectForm" onSubmit={this.handleSubmit}>
         <select
-          className='countrySelect'
+          className="countrySelect"
           value={this.state.value}
-          onChange={this.handleChange}>
-          <option selected='true'>select country</option>
-          <option value='af'>Afghanistan </option>
-          <option value='au'>Australia</option>
-          <option value='us'>America</option>
-          <option value='bd'>Bangladesh</option>
-          <option value='br'>Brazil</option>
-          <option value='ca'>Canada</option>
-          <option value='cn'>China</option>
-          <option value='dk'>Denmark</option>
-          <option value='eg'>Egypt</option>
-          <option value='EE'>Estonia</option>
-          <option value='fr'>France</option>
-          <option value='in'>India</option>
-          <option value='jp'>Japan</option>
+          onChange={this.handleChange}
+        >
+          <option selected="true">select country</option>
+          <option value="af">Afghanistan </option>
+          <option value="au">Australia</option>
+          <option value="us">America</option>
+          <option value="bd">Bangladesh</option>
+          <option value="br">Brazil</option>
+          <option value="ca">Canada</option>
+          <option value="cn">China</option>
+          <option value="dk">Denmark</option>
+          <option value="eg">Egypt</option>
+          <option value="EE">Estonia</option>
+          <option value="fr">France</option>
+          <option value="in">India</option>
+          <option value="jp">Japan</option>
         </select>
 
-        <input className='inpSubCountry' type='submit' value='Submit' />
+        <input className="inpSubCountry" type="submit" value="Submit" />
       </form>
     );
   }

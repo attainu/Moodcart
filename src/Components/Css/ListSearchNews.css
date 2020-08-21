@@ -1,6 +1,6 @@
 .searchCard {
   width: 80%;
-  height: 273px;
+  height: 250px;
   background: white;
   display: flex;
   margin: 5px;
@@ -8,20 +8,17 @@
   overflow: hidden;
 }
 
-.searchDate {
-  margin-top: 10px;
-  font-weight: 400;
-  margin-top: 10px;
-  background: #0f5bdf;
-  width: 16%;
-  padding: 5px 10px;
+.imgBox {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.searchDetails {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  font-size: 13px;
+  flex-direction: column;
+  padding: 20px;
+  width: 65%;
 }
 
 .searchTitle {
@@ -33,29 +30,34 @@
 .searchDesc {
   color: #454546;
   font-weight: 400;
+  overflow: hidden;
   font-size: 15px;
 }
 
-.imgBox {
-  width: 428px;
-  height: 273px;
-  overflow: hidden;
-}
-
-.searchDetails {
+.searchDate {
+  margin-top: 10px;
+  font-weight: 400;
+  margin-top: 10px;
+  background: #0f5bdf;
+  width: 94px;
+  padding: 5px 10px;
   display: flex;
-  flex-direction: column;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 13px;
 }
 
 .searchImgDiv {
-  width: 428px;
-  height: 273px;
+  width: 35%;
+  height: 250px;
 }
 .searchImgDiv2 {
   overflow: hidden;
-  width: 428px;
-  height: 273px;
+  width: 100%;
+  height: 250px;
 }
 
 .searchImgDiv img {
@@ -64,4 +66,64 @@
 
 .searchImgDiv:hover img {
   transform: scale(1.3);
+}
+
+@media (max-width: 1096px) {
+  .searchTitle {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 800px) {
+  .searchCard {
+    width: 48%;
+    background: white;
+    display: flex;
+    margin: 5px;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 500px;
+  }
+
+  .searchImgDiv {
+    height: 250px;
+    width: 100%;
+  }
+
+  .searchDetails {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .searchTitle {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 510px) {
+  .searchCard {
+    width: 82%;
+    background: white;
+    display: flex;
+    margin: 5px;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 500px;
+  }
+
+  .searchDesc {
+    color: #454546;
+    font-weight: 400;
+    overflow: hidden;
+    font-size: 14px;
+  }
+
+  .searchTitle {
+    font-size: 19px;
+  }
 }
