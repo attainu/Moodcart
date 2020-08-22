@@ -9,7 +9,7 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
     return (
       <Flippy
         mode={mode}
-        className='flips'
+        className="flips"
         style={{
           textAlign: "left",
           width: "390px",
@@ -19,24 +19,27 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
           overflow: "hidden",
           position: "inherit",
           borderRadius: "10px",
+          background: "white",
         }}
         ref={(r) => (restprops.flippyHorizontal = r)}
-        flipOnClick={false}>
+        flipOnClick={false}
+      >
         <FrontSide
-          className='frontFlip'
+          className="frontFlip"
           style={{
-            background: "#4481eb",
-            color: "white",
+            background: "white",
+            color: "#106fea",
             position: "relative",
             padding: "0px",
-          }}>
-          <div className='newsImageDiv'>
-            <img className='newsImage' src={snews.image} alt='img' />
+          }}
+        >
+          <div className="newsImageDiv">
+            <img className="newsImage" src={snews.image} alt="img" />
           </div>
-          <div style={{ margin: "5px" }}>
+          <div className="detailsBox">
             <div>
               <h3>{!snews.title ? "" : snews.title.slice(0, 80)}...</h3>
-              <p>
+              <p style={{ color: "black" }}>
                 {snews.description !== null
                   ? snews.description.slice(0, 110)
                   : ""}
@@ -44,18 +47,15 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
               </p>
             </div>
             <button
-              type='button'
-              onClick={() => restprops.flippyHorizontal.toggle()}>
+              className="readMoreButton"
+              type="button"
+              onClick={() => restprops.flippyHorizontal.toggle()}
+            >
               Read more
             </button>
           </div>
         </FrontSide>
-        <BackSide
-          className='backFlip'
-          style={{
-            color: "white",
-            background: "#4481eb",
-          }}>
+        <BackSide className="backFlip">
           <p>
             {snews.summarization
               ? snews.summarization.length > 550
@@ -64,8 +64,10 @@ const ListNews = ({ snews, flippy, mode, children, ...restprops }) => {
               : " "}
           </p>
           <button
-            type='button'
-            onClick={() => restprops.flippyHorizontal.toggle()}>
+            className="readMoreButton"
+            type="button"
+            onClick={() => restprops.flippyHorizontal.toggle()}
+          >
             Go back
           </button>
         </BackSide>

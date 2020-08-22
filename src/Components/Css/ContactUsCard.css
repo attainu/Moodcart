@@ -2,24 +2,51 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-right: 100px;
-  margin-left: 160px;
-  width: 1100px;
-  height: 400px;
-  background-color: rgb(0, 0, 0);
-  border: 5px white;
   color: white;
+  height: 88%;
+  width: 80%;
+  background: navy;
+  flex-wrap: wrap;
 }
 .contact {
-  height: 400px;
-  width: 500px;
-  background-color: blue;
-  padding: 15px;
+  height: 350px;
+  width: 300px;
+  background: linear-gradient(to right, #1e40a5, #1cb5e0);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .photo {
   width: 200px;
-  height: 200px;
-  margin-top: 5px;
-  margin-left: 135px;
+  height: 185px;
+  border-radius: 50%;
+}
+
+.linkedinLogo {
+  font-size: 10px;
+}
+
+@media (max-width: 500px) {
+  .card {
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 100%;
+    width: 100%;
+    background: navy;
+    flex-wrap: wrap;
+  }
+
+  .contact {
+    height: 300px;
+    margin-top: 20px;
+    width: 300px;
+    background: linear-gradient(to right, #1e40a5, #1cb5e0);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }

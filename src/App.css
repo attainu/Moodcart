@@ -4,6 +4,14 @@
 
 .cate {
   background: none;
+  padding: 5px;
+  margin: 5px;
+  color: white;
+  width: max-content;
+  height: max-content;
+  font-size: 20px;
+  /* background-color: #4481eb; */
+  border: none;
 }
 
 .selectSearch {
@@ -36,12 +44,28 @@
 }
 
 body {
-  background: black;
+  background: #d7dee4a3;
 }
 
 body,
 input {
   font-family: "Poppins", sans-serif;
+}
+
+.contactUsPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactDetailsDesign {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
@@ -409,6 +433,15 @@ form.sign-up-form {
   .container.sign-up-mode:before {
     bottom: 28%;
     left: 50%;
+  }
+
+  .contactDetailsDesign {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 

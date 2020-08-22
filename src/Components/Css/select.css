@@ -15,12 +15,13 @@
 .countrySelect {
   height: 48px;
   border-radius: 35px;
-  background: #5995fd;
+  background: #0f5bdf;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align-last: center;
   color: white;
+  margin-right: 2px;
 }
 
 .inpSubCountry {
@@ -30,4 +31,6 @@
   border-radius: 35px;
   height: 48px;
   width: 70px;
+  border-color: #0f5bdf;
+  background: white;
 }

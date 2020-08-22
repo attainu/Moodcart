@@ -30,7 +30,12 @@ export const News = ({ news, mode = "trending", ...restprops }) => {
   } else {
     return (
       <div className="sweet-loading">
-        <PuffLoader css={override} size={150} color={"#fff"} loading={true} />
+        <PuffLoader
+          css={override}
+          size={150}
+          color={"#0F5BDF"}
+          loading={true}
+        />
       </div>
     );
   }

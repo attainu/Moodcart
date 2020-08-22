@@ -33,7 +33,7 @@ const SearchedNews = ({ news, mode = "search" }) => {
         <PuffLoader
           css={override}
           size={150}
-          color={"#123abc"}
+          color={"#0F5BDF"}
           loading={true}
         />
       </div>
