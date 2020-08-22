@@ -7,6 +7,7 @@ import Navbar from "../../Components/Navbar.jsx";
 import Search from "../../Components/Search.jsx";
 import Footer from "../../Components/Footer.jsx";
 import Select from "../../Components/Select.jsx";
+import ResponsiveCat from "../../Components/ResponsiveCategories";
 import "./home.css";
 
 class HomePage extends Component {
@@ -19,6 +20,7 @@ class HomePage extends Component {
       <Redirect to='/login' />
     ) : (
       <>
+        <ResponsiveCat />
         <Navbar />
         <div className='selectSearch'>
           <Select />
