@@ -140,3 +140,12 @@ h1 {
     text-align: left;
   }
 }
+
+.logout {
+  background-color: white;
+  width: 80px;
+  height: 40px;
+  font-size: 18px;
+  color: black;
+  border-radius: 5px;
+}
