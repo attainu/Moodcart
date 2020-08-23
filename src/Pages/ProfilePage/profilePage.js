@@ -5,6 +5,7 @@ import Navbar from "../../Components/Navbar.jsx";
 import { connect } from "react-redux";
 import "./profilePage.css";
 import Footer from "../../Components/Footer";
+import Avtar from "../../Components/Aeets/download.png";
 
 const profilePage = ({ user }) => {
   console.log(user);
@@ -16,11 +17,15 @@ const profilePage = ({ user }) => {
         <div className='profileCard'>
           <img
             className='userImage'
-            src={user.user01.photoURL}
+            src={!user.user01 ? Avtar : user.user01.photoURL}
             alt='User Profile Image'
           />
-          <h2 style={{ color: "white" }}>Name:- {user.user01.displayName}</h2>
-          <h3 style={{ color: "white" }}>Email:- {user.user01.email}</h3>
+          <h2 style={{ color: "white" }}>
+            {user.user01 ? user.user01.displayName : ""}
+          </h2>
+          <h3 style={{ color: "white" }}>
+            {user.user01 ? user.user01.email : ""}
+          </h3>
         </div>
       </div>
       <Footer />

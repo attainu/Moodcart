@@ -7,11 +7,8 @@ import Avtar from "./Aeets/download.png";
 import { NavLink, Link, Redirect } from "react-router-dom";
 import Keys from "../config";
 import Category from "./category";
-import ResponsiveCat from "./ResponsiveCategories";
 
 const SuNavbar = ({ user, logOutUser }) => {
-  const [toggle, setToggle] = useState(false);
-
   let userData;
   if (user != null) {
     userData = JSON.parse(window.localStorage.getItem("user"));
@@ -21,7 +18,13 @@ const SuNavbar = ({ user, logOutUser }) => {
   console.log(userData.user01);
 
   function myFunction() {
-    setToggle(!toggle);
+    var x = document.getElementsByClassName("cate");
+    if (x.className === "cate") {
+      x.className += " responsive";
+      console.log("working");
+    } else {
+      x.className = "cate";
+    }
   }
 
   const handleLogoutSuccess = () => {
@@ -36,8 +39,6 @@ const SuNavbar = ({ user, logOutUser }) => {
           <a href='javascript:void(0);' className='icon' onClick={myFunction}>
             <i style={{ fontSize: "xx-large" }} className='fa fa-bars'></i>
           </a>
-          {toggle ? <ResponsiveCat /> : null}
-
           <Link to='/' id='link' className='webName'>
             <h1 className='webNameH1'>StayUpdated</h1>
           </Link>
@@ -53,7 +54,7 @@ const SuNavbar = ({ user, logOutUser }) => {
                 to='/profile/'
                 data-tip='Profile'>
                 <img
-                  src={userData.imageUrl}
+                  src={userData.user01 ? userData.user01.photoURL : Avtar}
                   className='App-logo-profile'
                   alt='logo'
                 />
