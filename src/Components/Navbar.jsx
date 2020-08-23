@@ -27,10 +27,6 @@ const SuNavbar = ({ user, logOutUser }) => {
     }
   }
 
-  const handleLogoutFailure = (err) => {
-    console.error(err);
-  };
-
   const handleLogoutSuccess = () => {
     alert("Logged out successfully");
     logOutUser();
@@ -64,12 +60,7 @@ const SuNavbar = ({ user, logOutUser }) => {
                 />
               </Link>
               <div id='navItem3'>
-                <GoogleLogout
-                  clientId={Keys.Client_id}
-                  buttonText='Logout'
-                  onLogoutSuccess={handleLogoutSuccess}
-                  onFailure={handleLogoutFailure}
-                />
+                <button onClick={handleLogoutSuccess}>Logout</button>
               </div>
             </div>
           )}

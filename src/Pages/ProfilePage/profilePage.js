@@ -8,7 +8,7 @@ import Footer from "../../Components/Footer";
 
 const profilePage = ({ user }) => {
   console.log(user);
-  if (!user && user.lenght <= 1) return <Redirect to='/login' />;
+  // if (!user && user.lenght <= 1) return <Redirect to='/login' />;
   return (
     <div className='profilePage'>
       <Navbar />
