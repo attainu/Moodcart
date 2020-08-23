@@ -13,7 +13,6 @@ class category extends Component {
   };
 
   handleSubmit = (event) => {
-    // event.preventDefault();
     console.log("hi there");
     const { history } = this.props;
     history.push(`/category/${this.state.category}`);
@@ -21,14 +20,8 @@ class category extends Component {
 
   render() {
     return (
-      <form
-        className="buttonGroup "
-        onSubmit={this.handleSubmit}
-        style={{}}
-        size="lg"
-      >
+      <form className="buttonGroup " onSubmit={this.handleSubmit} size="lg">
         <button
-          // style={{ background: "none" }}
           size="lg"
           className="cate"
           value="Entertainment"
@@ -38,7 +31,6 @@ class category extends Component {
           Entertainment
         </button>
         <button
-          // style={{ background: "none" }}
           size="lg"
           className="cate"
           value="ScienceAndTechnology"
@@ -48,7 +40,6 @@ class category extends Component {
           Sci-Tech
         </button>
         <button
-          // style={{ background: "none" }}
           size="lg"
           className="cate"
           value="Politics"
@@ -58,7 +49,6 @@ class category extends Component {
           Politics
         </button>
         <button
-          // style={{ background: "none" }}
           size="lg"
           className="cate"
           value="Sports"
@@ -68,7 +58,6 @@ class category extends Component {
           Sports
         </button>
         <button
-          // style={{ background: "none" }}
           size="lg"
           className="cate"
           value="LifeStyle"
@@ -78,7 +67,6 @@ class category extends Component {
           LifeStyle
         </button>
         <button
-          // style={{ background: "none" }}
           size="lg"
           className="cate"
           value="Business"

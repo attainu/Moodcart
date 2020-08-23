@@ -7,7 +7,7 @@ import Navbar from "../../Components/Navbar.jsx";
 import Search from "../../Components/Search.jsx";
 import Footer from "../../Components/Footer.jsx";
 import Select from "../../Components/Select.jsx";
-import ResponsiveCat from "../../Components/ResponsiveCategories";
+
 import "./home.css";
 
 class HomePage extends Component {
@@ -15,14 +15,13 @@ class HomePage extends Component {
     this.props.fetchTrendingNews();
   }
   render() {
-    if (!this.props.user) return <Redirect to='/login' />;
+    if (!this.props.user) return <Redirect to="/login" />;
     return !this.props.user ? (
-      <Redirect to='/login' />
+      <Redirect to="/login" />
     ) : (
       <>
-        <ResponsiveCat />
         <Navbar />
-        <div className='selectSearch'>
+        <div className="selectSearch">
           <Select />
           <Search />
         </div>
