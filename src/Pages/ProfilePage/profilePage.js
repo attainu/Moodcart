@@ -8,7 +8,7 @@ import Footer from "../../Components/Footer";
 
 const profilePage = ({ user }) => {
   console.log(user);
-  if (!user) return <Redirect to='/login' />;
+  if (!user && user.lenght <= 1) return <Redirect to='/login' />;
   return (
     <div className='profilePage'>
       <Navbar />
@@ -16,11 +16,11 @@ const profilePage = ({ user }) => {
         <div className='profileCard'>
           <img
             className='userImage'
-            src={user.imageUrl}
+            src={user.user01.photoURL}
             alt='User Profile Image'
           />
-          <h2 style={{ color: "white" }}>Name:- {user.name}</h2>
-          <h3 style={{ color: "white" }}>Email:- {user.email}</h3>
+          <h2 style={{ color: "white" }}>Name:- {user.user01.displayName}</h2>
+          <h3 style={{ color: "white" }}>Email:- {user.user01.email}</h3>
         </div>
       </div>
       <Footer />
