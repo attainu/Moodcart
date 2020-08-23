@@ -1,24 +1,63 @@
-import React from "react";
-// import { Component } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { setUser } from "../../../Redux/actions/userAction";
-import Keys from "../../../config";
-import { GoogleLogin } from "react-google-login";
 import { Redirect } from "react-router-dom";
+import * as firebase from "firebase";
+import { auth } from "../../../FirebaseConfig";
 
 const SignIn = ({ user, setUser }) => {
-  const responseGoogle = (response) => {
-    if (response.error) {
-      console.error(response.error);
-    }
-    setUser({ ...response.profileObj, ...response.tokenObj });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onEmailChange = (event) => setEmail(event.target.value);
+  const onPasswordChange = (event) => setPassword(event.target.value);
+
+  const onSignIn = () => {
+    console.log(email, password);
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(function (result) {
+        console.log(result);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    setUser(...email, ...password);
   };
-  const responseSubmit = (response) => {
-    if (response.error) {
-      console.log(response.error);
-    }
-    setUser({ ...response.profileObj, ...response.tokenObj });
-    console.log(user);
+
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const app = firebase.app();
+    console.log(app);
+  });
+
+  const GoogleLogin = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        const user01 = result.user;
+        console.log(user01);
+        setUser({ user01 });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const FacebookLogin = () => {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        const user01 = result.user;
+        console.log(user01);
+        setUser({ user01 });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   if (user) return <Redirect to='/' />;
@@ -27,48 +66,32 @@ const SignIn = ({ user, setUser }) => {
       <h2 className='title'>Sign in </h2>
       <div className='input-field'>
         <i className='fas fa-user'></i>
-        <input type='text' placeholder='Username' />
+        <input type='text' placeholder='email' onChange={onEmailChange} />
       </div>
 
       <div className='input-field'>
         <i className='fas fa-lock'></i>
-        <input type='password' placeholder='Password' />
+        <input
+          type='password'
+          placeholder='Password'
+          onChange={onPasswordChange}
+        />
       </div>
 
-      <input type='submit' value='Login' className='btn solid' />
+      <input
+        type='submit'
+        value='Login'
+        className='btn solid'
+        onClick={onSignIn}
+      />
       <p className='social-text'>Or Sign in with social platform</p>
 
       <div className='social-media'>
         <a href='#' className='social-icon'>
-          <i className='fab fa-facebook-f'></i>
+          <i className='fab fa-facebook-f' onClick={FacebookLogin}></i>
         </a>
         <a href='#' className='social-icon'>
-          <i className='fab fa-twitter'></i>
-        </a>
-        <GoogleLogin
-          clientId={Keys.Client_id}
-          render={(renderProps) => (
-            <button
-              style={{ border: "none", background: "none" }}
-              onClick={renderProps.onClick}
-              disabled={renderProps.disabled}>
-              <a href='#' className='social-icon'>
-                <i className='fab fa-google'></i>
-              </a>
-            </button>
-          )}
-          buttonText='Login'
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-          cookiePolicy={"single_host_origin"}
-        />
-
-        {/* <GoogleLogin
-          clientId={}
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}></GoogleLogin> */}
-        <a href='#' className='social-icon' style={{ cursor: "not-allowed" }}>
-          <i className='fab fa-linkedin-in'></i>
+          <i className='fab fa-google' onClick={GoogleLogin}></i>
         </a>
       </div>
     </form>

@@ -3,7 +3,7 @@ import "./Css/NavBar.css";
 import { GoogleLogout } from "react-google-login";
 import { logOutUser } from "../Redux/actions/userAction";
 import { connect } from "react-redux";
-import bookmark from "./bookmark.svg";
+import Avtar from "./Aeets/download.png";
 import { NavLink, Link, Redirect } from "react-router-dom";
 import Keys from "../config";
 import Category from "./category";
@@ -15,7 +15,7 @@ const SuNavbar = ({ user, logOutUser }) => {
   } else {
     userData = null;
   }
-  console.log(userData);
+  console.log(userData.user01);
 
   function myFunction() {
     var x = document.getElementsByClassName("cate");
@@ -58,7 +58,7 @@ const SuNavbar = ({ user, logOutUser }) => {
                 to='/profile/'
                 data-tip='Profile'>
                 <img
-                  src={userData.imageUrl}
+                  src={userData.user01 ? userData.user01.photoURL : Avtar}
                   className='App-logo-profile'
                   alt='logo'
                 />
