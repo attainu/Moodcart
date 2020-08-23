@@ -3,13 +3,15 @@ import { Redirect } from "react-router-dom";
 import Navbar from "../../Components/Navbar.jsx";
 import Footer from "../../Components/Footer";
 import Contact from "../../Components/ContactUsCard";
+import "../../App.css";
 
 const ContactUsPage = ({ user }) => {
   return (
-    <div>
+    <div className="contactUsPage">
       <Navbar />
-      <h1>Contact up page</h1>
-      <Contact />
+      <div className="contactDetailsDesign">
+        <Contact />
+      </div>
     </div>
   );
 };

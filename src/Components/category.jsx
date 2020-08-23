@@ -22,62 +22,69 @@ class category extends Component {
   render() {
     return (
       <form
-        className='buttonGroup '
+        className="buttonGroup "
         onSubmit={this.handleSubmit}
         style={{}}
-        size='lg'>
+        size="lg"
+      >
         <button
           // style={{ background: "none" }}
-          size='lg'
-          className='cate'
-          value='Entertainment'
-          type='submit'
-          onClick={this.handleChange}>
+          size="lg"
+          className="cate"
+          value="Entertainment"
+          type="submit"
+          onClick={this.handleChange}
+        >
           Entertainment
         </button>
         <button
           // style={{ background: "none" }}
-          size='lg'
-          className='cate'
-          value='ScienceAndTechnology'
-          type='submit'
-          onClick={this.handleChange}>
+          size="lg"
+          className="cate"
+          value="ScienceAndTechnology"
+          type="submit"
+          onClick={this.handleChange}
+        >
           Sci-Tech
         </button>
         <button
           // style={{ background: "none" }}
-          size='lg'
-          className='cate'
-          value='Politics'
-          type='submit'
-          onClick={this.handleChange}>
+          size="lg"
+          className="cate"
+          value="Politics"
+          type="submit"
+          onClick={this.handleChange}
+        >
           Politics
         </button>
         <button
           // style={{ background: "none" }}
-          size='lg'
-          className='cate'
-          value='Sports'
-          type='submit'
-          onClick={this.handleChange}>
+          size="lg"
+          className="cate"
+          value="Sports"
+          type="submit"
+          onClick={this.handleChange}
+        >
           Sports
         </button>
         <button
           // style={{ background: "none" }}
-          size='lg'
-          className='cate'
-          value='LifeStyle'
-          type='submit'
-          onClick={this.handleChange}>
+          size="lg"
+          className="cate"
+          value="LifeStyle"
+          type="submit"
+          onClick={this.handleChange}
+        >
           LifeStyle
         </button>
         <button
           // style={{ background: "none" }}
-          size='lg'
-          className='cate'
-          value='Business'
-          type='submit'
-          onClick={this.handleChange}>
+          size="lg"
+          className="cate"
+          value="Business"
+          type="submit"
+          onClick={this.handleChange}
+        >
           Business
         </button>
       </form>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useStates } from "react";
 import "./App.css";
 import "./Components/Css/ListNews.css";
 import Container from "./Pages/LoginPage/Container/Container";
@@ -11,8 +11,18 @@ import CountryNewsPage from "./Pages/CountryPage/NewsByCountryPage";
 // import OneNewsPage from "./Pages/OneNewsPage";
 import SearchPage from "./Pages/SearchPage/SearchPage";
 import CategoryPage from "./Pages/CategoryPage/CategoryPage";
+import { auth } from "./FirebaseConfig";
+import { functions } from "firebase";
 
-function App() {
+function App({ user, setUser }) {
+  // const [user, setUser] = useStates(false);
+  auth.onAuthStateChanged(function (user) {
+    if (user) {
+      setUser(user);
+    } else {
+      console.log("no user is signed in");
+    }
+  });
   return (
     <div className='App'>
       <Switch>

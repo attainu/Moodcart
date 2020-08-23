@@ -11,6 +11,27 @@
   color: white;
 }
 
+.detailsBox {
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 217px;
+}
+
+.readMoreButton {
+  height: 29px;
+  width: 79px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: #4481eb;
+  padding: 5px;
+  color: white;
+  border-color: none;
+  border: none;
+}
+
 .frontFlip img {
   transition: all 0.6s ease;
 }
@@ -80,6 +101,12 @@
 }
 
 .backFlip {
-  color: white;
-  background: #4481eb;
+  color: #0c4b83;
+  font-weight: 600;
+  background: rgb(255 255 255);
+  font-size: 16px;
+  transition-duration: 0.6s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
